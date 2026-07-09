@@ -22,7 +22,7 @@ const cols = [
     h: "Connect",
     links: [
       { label: "Instagram", href: "https://www.instagram.com/havah_studios" },
-      { label: "LinkedIn", href: "#" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/117204025/" },
       { label: "havahstudios@gmail.com", href: "mailto:havahstudios@gmail.com" },
     ],
   },
@@ -114,7 +114,7 @@ export default function Footer() {
           </span>
         </Link>
         <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: "0.06em", textTransform: "uppercase", color: "#4A5059" }}>
-          © 2025 HAVAH Studios
+          © 2026 HAVAH Studios
         </span>
         <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#4A5059" }}>
           Los Angeles, CA
