@@ -5,6 +5,22 @@
   font-variant-emoji: text;
 }
 
+/* Hero pill — match headline size on mobile since it's on its own line */
+@media (max-width: 639px) {
+  .hero-pill {
+    font-size: 44px !important;
+    padding: 0.18em 0.6em !important;
+  }
+}
+
+/* Services list: on mobile, no hover exists — show all solid, no stroke */
+@media (max-width: 639px) {
+  .service-title {
+    color: #15171A !important;
+    -webkit-text-stroke: 0 !important;
+  }
+}
+
 /* Pill floats on desktop only, sits flat on mobile */
 .pill-float {
   display: inline-block;

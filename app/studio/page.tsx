@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { ArrowNE } from "@/components/ArrowIcon";
 
 const values = [
   { n: "01", t: "Senior people, every time", d: "You talk to the people doing the work. No account managers, no one in between." },
@@ -69,7 +70,7 @@ export default function StudioPage() {
             className="flex items-center gap-2 rounded-full text-white no-underline font-semibold transition-opacity hover:opacity-90"
             style={{ background: "#B5642E", fontSize: "13px", padding: "14px 28px", ...display }}
           >
-            Start a project <span>↗</span>
+            Start a project <ArrowNE size={12} />
           </Link>
         </section>
 

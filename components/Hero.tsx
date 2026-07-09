@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ScramblePill from "@/components/ScramblePill";
+import { ArrowNE } from "@/components/ArrowIcon";
 
 export default function Hero() {
   return (
@@ -33,6 +34,7 @@ export default function Hero() {
                 <span className="whitespace-nowrap">We Design</span>
                 <span className="pill-float">
                   <ScramblePill
+                    className="hero-pill"
                     style={{
                       background: "#B5642E",
                       fontSize: "clamp(20px,3vw,44px)",
@@ -66,7 +68,7 @@ export default function Hero() {
               className="flex items-center gap-2 rounded-full text-white no-underline font-semibold transition-opacity hover:opacity-80"
               style={{ background: "#B5642E", fontSize: "13px", padding: "14px 28px", fontFamily: "var(--font-display)" }}
             >
-              Start a project <span>{"↗︎"}</span>
+              Start a project <ArrowNE size={12} />
             </Link>
             <Link
               href="/work"

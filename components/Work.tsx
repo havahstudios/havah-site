@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Reveal from "@/components/Reveal";
+import { ArrowRight } from "@/components/ArrowIcon";
 
 const projects = [
   { name: "Kosher Hibachi LA", meta: "Restaurant", img: "/kosher-hibachi.jpg", href: "https://kosherhibachila.com/", imgPosition: "center 60%" },
@@ -61,9 +62,9 @@ function TiltCard({ w, index }: { w: typeof projects[0]; index: number }) {
             </h3>
             <div
               className="w-9 h-9 rounded-full border flex items-center justify-center shrink-0 transition-colors group-hover:bg-[#15171A] group-hover:border-[#15171A] group-hover:text-white"
-              style={{ borderColor: "#DDE1E8", color: "#15171A", fontSize: "14px" }}
+              style={{ borderColor: "#DDE1E8", color: "#15171A" }}
             >
-              →
+              <ArrowRight size={13} />
             </div>
           </div>
           <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6B7280" }}>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { ArrowNE } from "@/components/ArrowIcon";
 
 const navLinks = [
   { label: "Work", href: "/work" },
@@ -64,7 +65,7 @@ export default function Nav() {
             <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6B7280" }}>Taking on projects</span>
           </span>
           <Link href="/contact" className="flex items-center gap-1.5 rounded-full text-white text-[12px] font-semibold no-underline transition-opacity hover:opacity-90" style={{ background: "#B5642E", padding: "9px 18px", fontFamily: "var(--font-display)" }}>
-            Let&apos;s talk <span>{"↗︎"}</span>
+            Let&apos;s talk <ArrowNE size={11} />
           </Link>
         </div>
 
@@ -107,7 +108,7 @@ export default function Nav() {
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6B7280" }}>Taking on projects</span>
             </span>
             <Link href="/contact" onClick={() => setOpen(false)} className="flex items-center gap-1.5 rounded-full text-white text-[12px] font-semibold no-underline" style={{ background: "#B5642E", padding: "8px 16px", fontFamily: "var(--font-display)" }}>
-              Let&apos;s talk {"↗︎"}
+              Let&apos;s talk <ArrowNE size={11} />
             </Link>
           </div>
         </nav>

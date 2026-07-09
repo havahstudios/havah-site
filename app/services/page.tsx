@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { ArrowNE, ArrowRight } from "@/components/ArrowIcon";
 
 const mono = { fontFamily: "var(--font-mono)" } as React.CSSProperties;
 const display = { fontFamily: "var(--font-display)" } as React.CSSProperties;
@@ -64,7 +65,7 @@ export default function ServicesPage() {
                     <span key={tag} className="rounded-full" style={{ ...mono, fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.38)", background: "rgba(255,255,255,0.07)", padding: "5px 12px" }}>{tag}</span>
                   ))}
                 </div>
-                <Link href="/contact" className="w-10 h-10 rounded-full flex items-center justify-center no-underline shrink-0 transition-opacity hover:opacity-70" style={{ background: "#B5642E", color: "#FFFFFF", fontSize: "15px" }}>→</Link>
+                <Link href="/contact" className="w-10 h-10 rounded-full flex items-center justify-center no-underline shrink-0 transition-opacity hover:opacity-70" style={{ background: "#B5642E", color: "#FFFFFF", fontSize: "15px" }}><ArrowRight size={14} /></Link>
               </div>
             </div>
           </div>
@@ -100,7 +101,7 @@ export default function ServicesPage() {
                     <span key={tag} className="rounded-full" style={{ ...mono, fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", background: "rgba(255,255,255,0.12)", padding: "5px 10px" }}>{tag}</span>
                   ))}
                 </div>
-                <Link href="/contact" className="w-10 h-10 rounded-full flex items-center justify-center no-underline self-end transition-opacity hover:opacity-70" style={{ background: "rgba(255,255,255,0.18)", color: "#FFFFFF", fontSize: "15px" }}>→</Link>
+                <Link href="/contact" className="w-10 h-10 rounded-full flex items-center justify-center no-underline self-end transition-opacity hover:opacity-70" style={{ background: "rgba(255,255,255,0.18)", color: "#FFFFFF", fontSize: "15px" }}><ArrowRight size={14} /></Link>
               </div>
             </div>
           </div>
@@ -138,7 +139,7 @@ export default function ServicesPage() {
                     <span key={tag} className="rounded-full" style={{ ...mono, fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6B7280", background: "#E4E7EC", padding: "5px 10px" }}>{tag}</span>
                   ))}
                 </div>
-                <Link href="/contact" className="w-10 h-10 rounded-full flex items-center justify-center no-underline self-end transition-opacity hover:opacity-70" style={{ background: "#15171A", color: "#FFFFFF", fontSize: "15px" }}>→</Link>
+                <Link href="/contact" className="w-10 h-10 rounded-full flex items-center justify-center no-underline self-end transition-opacity hover:opacity-70" style={{ background: "#15171A", color: "#FFFFFF", fontSize: "15px" }}><ArrowRight size={14} /></Link>
               </div>
             </div>
           </div>
@@ -175,7 +176,7 @@ export default function ServicesPage() {
                     <span key={tag} className="rounded-full" style={{ ...mono, fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6B7280", background: "#F0F2F5", padding: "5px 12px" }}>{tag}</span>
                   ))}
                 </div>
-                <Link href="/contact" className="w-10 h-10 rounded-full flex items-center justify-center no-underline shrink-0 transition-opacity hover:opacity-70" style={{ background: "#B5642E", color: "#FFFFFF", fontSize: "15px" }}>→</Link>
+                <Link href="/contact" className="w-10 h-10 rounded-full flex items-center justify-center no-underline shrink-0 transition-opacity hover:opacity-70" style={{ background: "#B5642E", color: "#FFFFFF", fontSize: "15px" }}><ArrowRight size={14} /></Link>
               </div>
             </div>
           </div>
@@ -199,7 +200,7 @@ export default function ServicesPage() {
             className="flex items-center gap-2 rounded-full text-white no-underline font-semibold transition-opacity hover:opacity-90"
             style={{ background: "#B5642E", fontSize: "13px", padding: "14px 28px", ...display }}
           >
-            Start a project <span>↗</span>
+            Start a project <ArrowNE size={12} />
           </Link>
         </section>
 

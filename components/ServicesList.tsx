@@ -41,25 +41,38 @@ export default function ServicesList() {
               onMouseEnter={() => setHovered(n)}
               onMouseLeave={() => setHovered(null)}
             >
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "13px", color: "#98A0AD", width: "36px", flexShrink: 0, transition: "color 0.3s ease", ...(isHovered && { color: "#B5642E" }) }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "13px", color: isHovered ? "#B5642E" : "#98A0AD", width: "36px", flexShrink: 0, transition: "color 0.3s ease", alignSelf: "flex-start", paddingTop: "2px" }}>
                 {n}
               </span>
-              <h3
-                className="service-title m-0 flex-1 min-w-0"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 800,
-                  fontSize: "clamp(28px,6vw,82px)",
-                  lineHeight: 1,
-                  letterSpacing: "-0.03em",
-                  textTransform: "uppercase",
-                  color: isHovered ? "#15171A" : (anyHovered ? "transparent" : (n === "01" ? "#15171A" : "transparent")),
-                  WebkitTextStroke: isHovered ? "none" : (anyHovered ? "1.5px #C2C8D2" : (n === "01" ? "none" : "1.5px #C2C8D2")),
-                  transition: "color 0.3s ease, -webkit-text-stroke 0.3s ease",
-                }}
-              >
-                {t}
-              </h3>
+
+              {/* Title + mobile subtitle stacked */}
+              <div className="flex-1 min-w-0 flex flex-col">
+                <h3
+                  className="service-title m-0"
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 800,
+                    fontSize: "clamp(26px,6vw,82px)",
+                    lineHeight: 1,
+                    letterSpacing: "-0.03em",
+                    textTransform: "uppercase",
+                    color: isHovered ? "#15171A" : (anyHovered ? "transparent" : (n === "01" ? "#15171A" : "transparent")),
+                    WebkitTextStroke: isHovered ? "none" : (anyHovered ? "1px #C2C8D2" : (n === "01" ? "none" : "1px #C2C8D2")),
+                    transition: "color 0.3s ease, -webkit-text-stroke 0.3s ease",
+                  }}
+                >
+                  {t}
+                </h3>
+                {/* Visible only on mobile — replaces hover-reveal cat */}
+                <span
+                  className="sm:hidden mt-[6px]"
+                  style={{ fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#98A0AD" }}
+                >
+                  {cat}
+                </span>
+              </div>
+
+              {/* Desktop-only cat label (hover-revealed) */}
               <span className="hidden md:block" style={{ marginLeft: "auto", fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6B7280", flexShrink: 0, opacity: isHovered ? 1 : 0, transition: "opacity 0.2s ease" }}>
                 {cat}
               </span>

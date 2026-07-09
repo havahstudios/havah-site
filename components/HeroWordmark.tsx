@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowNE } from "@/components/ArrowIcon";
 
 export default function HeroWordmark() {
   return (
@@ -107,7 +108,7 @@ export default function HeroWordmark() {
               fontFamily: "var(--font-display)",
             }}
           >
-            Start a project <span>↗</span>
+            Start a project <ArrowNE size={12} />
           </Link>
           <Link
             href="/work"

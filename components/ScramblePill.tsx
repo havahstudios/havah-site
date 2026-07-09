@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 const WORDS = ["WEBSITES", "PAGES", "SITES", "STORES"];
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-export default function ScramblePill({ style }: { style?: React.CSSProperties }) {
+export default function ScramblePill({ style, className }: { style?: React.CSSProperties; className?: string }) {
   const [text, setText] = useState(WORDS[0]);
   const wordIdxRef = useRef(0);
   const scrambleRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -49,7 +49,7 @@ export default function ScramblePill({ style }: { style?: React.CSSProperties })
 
   return (
     <span
-      className="inline-flex items-center justify-center rounded-full text-white shrink-0"
+      className={`inline-flex items-center justify-center rounded-full text-white shrink-0${className ? ` ${className}` : ""}`}
       style={{ ...style, minWidth: "4ch" }}
     >
       {text}

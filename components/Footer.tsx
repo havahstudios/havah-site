@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowNE } from "@/components/ArrowIcon";
 
 const cols = [
   {
@@ -47,17 +48,17 @@ export default function Footer() {
             style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(30px,4.5vw,56px)", textTransform: "uppercase", letterSpacing: "-0.02em", marginTop: "12px" }}
           >
             {/* Height spacer */}
-            <span className="invisible flex items-baseline gap-[14px]" aria-hidden="true">
-              Start a project <span>↗</span>
+            <span className="invisible flex items-center gap-[14px]" aria-hidden="true">
+              Start a project <ArrowNE size={22} />
             </span>
             {/* Default — white, slides out upward on hover */}
-            <span className="absolute inset-0 flex items-baseline gap-[14px] transition-transform duration-[480ms] ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full" style={{ color: "#FFFFFF" }}>
-              Start a project <span style={{ color: "#B5642E" }}>↗</span>
+            <span className="absolute inset-0 flex items-center gap-[14px] transition-transform duration-[480ms] ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full" style={{ color: "#FFFFFF" }}>
+              Start a project <span style={{ color: "#B5642E" }}><ArrowNE size={22} /></span>
             </span>
             {/* Hover — copper, slides in from below */}
-            <span className="absolute inset-0 flex items-baseline gap-[14px] transition-transform duration-[480ms] ease-[cubic-bezier(0.76,0,0.24,1)] translate-y-full group-hover:translate-y-0" style={{ color: "#B5642E" }}>
+            <span className="absolute inset-0 flex items-center gap-[14px] transition-transform duration-[480ms] ease-[cubic-bezier(0.76,0,0.24,1)] translate-y-full group-hover:translate-y-0" style={{ color: "#B5642E" }}>
               Start a project{" "}
-              <span className="inline-block transition-transform duration-[480ms] ease-out group-hover:translate-x-[3px] group-hover:-translate-y-[3px]" style={{ color: "#FFFFFF" }}>↗</span>
+              <span className="inline-block transition-transform duration-[480ms] ease-out group-hover:translate-x-[3px] group-hover:-translate-y-[3px]" style={{ color: "#FFFFFF" }}><ArrowNE size={22} /></span>
             </span>
           </Link>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowNE } from "@/components/ArrowIcon";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
@@ -94,7 +95,7 @@ export default function ContactPage() {
           <div className="rounded-2xl p-6 sm:p-8 border" style={{ background: "#FFFFFF", borderColor: "#DDE1E8" }}>
             {sent ? (
               <div className="text-center py-8 flex flex-col items-center gap-3">
-                <div style={{ fontSize: "44px", color: "#B5642E" }}>✳</div>
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="20" stroke="#B5642E" strokeWidth="1.5"/><path d="M14 22L19 27L30 16" stroke="#B5642E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 <h2 className="m-0" style={{ ...display, fontWeight: 800, fontSize: "28px", textTransform: "uppercase", letterSpacing: "-0.02em", color: "#15171A" }}>
                   Got it. We will be in touch.
                 </h2>
@@ -136,7 +137,7 @@ export default function ContactPage() {
                   disabled={loading}
                   style={{ background: "#B5642E", fontSize: "14px", padding: "16px", width: "100%", border: "none", cursor: loading ? "not-allowed" : "pointer", opacity: loading ? 0.7 : 1, ...display }}
                 >
-                  {loading ? "Sending…" : <><span>Send message</span><span>↗</span></>}
+                  {loading ? "Sending…" : <><span>Send message</span><ArrowNE size={13} /></>}
                 </button>
               </form>
             )}
