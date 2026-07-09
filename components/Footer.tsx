@@ -6,8 +6,6 @@ const cols = [
     h: "Studio",
     links: [
       { label: "About", href: "/studio" },
-      { label: "Process", href: "/studio" },
-      { label: "Careers", href: "/contact" },
       { label: "Journal", href: "#" },
     ],
   },
