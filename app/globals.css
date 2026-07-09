@@ -8,7 +8,7 @@
 /* Hero pill — match headline size on mobile since it's on its own line */
 @media (max-width: 639px) {
   .hero-pill {
-    font-size: 44px !important;
+    font-size: 36px !important;
     padding: 0.18em 0.6em !important;
   }
 }
