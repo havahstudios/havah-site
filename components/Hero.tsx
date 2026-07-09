@@ -29,9 +29,9 @@ export default function Hero() {
             style={{ fontFamily: "var(--font-display)", fontSize: "clamp(48px,8.5vw,108px)", lineHeight: "0.92", letterSpacing: "-0.02em", color: "#15171A" }}
           >
             <span className="hero-clip">
-              <span className="flex items-center flex-nowrap gap-4" style={{ marginBottom: "0.06em" }}>
+              <span className="flex items-center flex-wrap gap-4" style={{ marginBottom: "0.06em" }}>
                 <span className="whitespace-nowrap">We Design</span>
-                <span style={{ transform: "rotate(-5deg) translateY(-22%) translateX(12px)", transformOrigin: "center center", display: "inline-block" }}>
+                <span className="pill-float">
                   <ScramblePill
                     style={{
                       background: "#B5642E",
@@ -66,7 +66,7 @@ export default function Hero() {
               className="flex items-center gap-2 rounded-full text-white no-underline font-semibold transition-opacity hover:opacity-80"
               style={{ background: "#B5642E", fontSize: "13px", padding: "14px 28px", fontFamily: "var(--font-display)" }}
             >
-              Start a project <span>↗</span>
+              Start a project <span>{"↗︎"}</span>
             </Link>
             <Link
               href="/work"

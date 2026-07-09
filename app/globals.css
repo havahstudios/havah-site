@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+/* Prevent iOS from rendering arrows/symbols as emoji */
+* {
+  font-variant-emoji: text;
+}
+
+/* Pill floats on desktop only, sits flat on mobile */
+.pill-float {
+  display: inline-block;
+}
+@media (min-width: 640px) {
+  .pill-float {
+    transform: rotate(-5deg) translateY(-22%) translateX(12px);
+    transform-origin: center center;
+  }
+}
+
 :root {
   --paper:        #FFFFFF;
   --paper-pure:   #FFFFFF;

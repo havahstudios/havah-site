@@ -16,9 +16,9 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HAVAH — Design Studio",
+  title: "HAVAH — Web Design & SEO Studio",
   description:
-    "An independent studio for ambitious teams — identity, web and product design, built end to end with the people who care most.",
+    "Web design and SEO out of Los Angeles. We build websites that rank on Google and convert the people who find them.",
 };
 
 export default function RootLayout({

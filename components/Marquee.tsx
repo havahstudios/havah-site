@@ -31,9 +31,9 @@ export default function Marquee() {
             >
               {item}
             </span>
-            <span style={{ color: "#B5642E", fontSize: "18px", lineHeight: 1, flexShrink: 0 }}>
-              ✳
-            </span>
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
+              <circle cx="4" cy="4" r="4" fill="#B5642E" />
+            </svg>
           </span>
         ))}
       </div>
