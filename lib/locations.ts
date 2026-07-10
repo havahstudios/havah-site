@@ -9,22 +9,16 @@ export interface LocationPage {
   subtext: string;
   metaTitle: string;
   metaDescription: string;
-  published: boolean;
+  publishDate: Date;
 }
 
-// ─── Sitemap control ─────────────────────────────────────────────────────────
-// Add slugs here each week to include them in the sitemap (and Google discovery).
-// Pages not listed here still exist and are accessible by direct URL —
-// they just won't be submitted to Google until you add them.
-//
-// Slug format: lowercase, hyphens, e.g. "web-design-santa-monica"
-const PUBLISHED_SLUGS: string[] = [
-  "web-design-santa-monica",
-  "web-design-venice",
-  "web-design-culver-city",
-  "web-design-beverly-hills",
-  "web-design-west-la",
-];
+// ─── Publish schedule ─────────────────────────────────────────────────────────
+// 5 pages enter the sitemap every week automatically.
+// Pages are ordered by value (web design cities first, then other services).
+// To change the pace, adjust BATCH_SIZE or WEEK_MS.
+const SCHEDULE_START = new Date("2026-07-10");
+const BATCH_SIZE = 5;
+const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 
 function toSlug(s: string) {
   return s.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
@@ -160,7 +154,7 @@ function generate(): LocationPage[] {
         subtext: tmpl.subtext(mod, "location"),
         metaTitle: `${tmpl.label} ${mod} | HAVAH Studios`,
         metaDescription: tmpl.metaDesc(mod, "location"),
-        published: PUBLISHED_SLUGS.includes(locationSlug),
+        publishDate: new Date(SCHEDULE_START.getTime() + Math.floor(pages.length / BATCH_SIZE) * WEEK_MS),
       });
     }
 
@@ -179,7 +173,7 @@ function generate(): LocationPage[] {
           subtext: `We build websites for ${mod} that rank on Google and convert the clients who find them. One team, no hand-offs.`,
           metaTitle: `Web Design for ${capitalize(mod)} | HAVAH Studios`,
           metaDescription: `HAVAH builds websites for ${mod}. Fast, modern, and built to rank — so the right clients find you first.`,
-          published: PUBLISHED_SLUGS.includes(industrySlug),
+          publishDate: new Date(SCHEDULE_START.getTime() + Math.floor(pages.length / BATCH_SIZE) * WEEK_MS),
         });
       }
     }

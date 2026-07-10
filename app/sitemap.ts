@@ -1,4 +1,6 @@
 import { MetadataRoute } from "next";
+
+export const dynamic = "force-dynamic";
 import { posts } from "@/lib/posts";
 import { locationPages } from "@/lib/locations";
 
@@ -22,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const locations = locationPages
-    .filter((p) => p.published)
+    .filter((p) => p.publishDate <= new Date())
     .map((p) => ({
       url: `${base}/locations/${p.slug}`,
       lastModified: new Date(),
