@@ -10,6 +10,7 @@ export interface Post {
   heroAlt: string;
   excerpt: string;
   keywordCluster: string[];
+  faqs?: Array<{ q: string; a: string }>;
   content: string;
 }
 
@@ -21,11 +22,11 @@ export const posts: Post[] = [
     description:
       "Most small business owners underestimate how much their website design affects revenue. Here's exactly why web design matters — and what a bad one is costing you.",
     date: "2026-07-10",
-    readTime: 12,
+    readTime: 13,
     category: "Strategy",
     heroImage:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
-    heroAlt: "Laptop displaying website analytics on a glass desk",
+    heroAlt: "Laptop displaying web design analytics for a small business",
     excerpt:
       "Your website is the first thing most customers see — and they decide whether to trust you within three seconds. Here's why web design is one of the most important investments a small business can make.",
     keywordCluster: [
@@ -40,10 +41,40 @@ export const posts: Post[] = [
       "how to make your website convert visitors into customers",
       "what should a small business website include",
     ],
+    faqs: [
+      {
+        q: "Why is web design important for small business?",
+        a: "Web design is the first thing potential customers judge your business on. Before they read a word, they've already decided whether your site — and by extension your business — looks trustworthy. Good design builds credibility, improves your Google ranking, works on every device, and converts visitors into paying customers. A poor one does the opposite, silently, every day.",
+      },
+      {
+        q: "Does web design affect SEO?",
+        a: "Yes — directly. Page speed, mobile responsiveness, site structure, and how long visitors stay on your pages all influence your Google ranking. A slow, hard-to-navigate, or mobile-broken site underperforms in search regardless of how good the content is.",
+      },
+      {
+        q: "Can a bad website hurt my business?",
+        a: "Yes. 94% of first impressions are design-related, and they form in under three seconds. A poorly designed site doesn't just fail to convert — it actively signals unprofessionalism. In a competitive market, that's enough to send potential customers to whoever ranks next to you.",
+      },
+      {
+        q: "What makes a good small business website?",
+        a: "It loads fast, works on mobile, explains what you do clearly, makes the next step obvious, includes proof that you're good at what you do, and looks consistent with your brand. It should be built with clean code and basic SEO in place from the start.",
+      },
+      {
+        q: "Why is mobile design important for small business?",
+        a: "63% of web traffic comes from mobile, and Google uses the mobile version of your site to set your search ranking. If your site isn't optimized for mobile, you're losing the majority of visitors and ranking lower in search at the same time.",
+      },
+      {
+        q: "Why is user experience (UX) important for a small business website?",
+        a: "UX is how your site feels to use — how easy it is to find what you're looking for, how quickly pages load, how clearly the next step is marked. When the experience is poor, visitors leave without acting. When it's smooth, they stay longer, engage more, and convert at higher rates. Every second of friction is a potential customer lost.",
+      },
+      {
+        q: "How much does web design cost for a small business?",
+        a: "A professionally designed small business website typically runs between $2,500 and $15,000 depending on scope, number of pages, and who you work with. Template builders cost less upfront but often cost more in lost business over time — slower load speeds, weaker mobile experience, and limited SEO capability add up.",
+      },
+    ],
     content: `
-<p class="lead">Your website is being judged right now. Somewhere, someone is deciding whether to trust your business based on how your homepage looks and how fast it loaded. They won't tell you this. They'll just leave. A well-designed site builds credibility, ranks on Google, works on every device, and turns visitors into customers. A poorly designed one loses business every single day — quietly, without a word.</p>
+<p class="lead">Your website is being judged right now. Somewhere, a potential customer is deciding whether your small business is worth trusting — based entirely on how your homepage looks and how fast it loaded. They won't tell you. They'll just leave. Good web design changes that equation. A well-designed site builds credibility, ranks on Google, works on every device, and turns visitors into customers. A poor one loses business every day — quietly, without a word.</p>
 
-<h2>1. First Impressions Are Made Before Anyone Reads Anything</h2>
+<h2>1. Why First Impressions Matter Online</h2>
 
 <p>Online first impressions work differently than in person. There's no handshake, no tone of voice, no moment to explain yourself. Design is doing all of that work before a visitor reads a single word.</p>
 
@@ -52,7 +83,7 @@ export const posts: Post[] = [
 <p>This is actually good news for smaller businesses. A well-designed website puts you in the same conversation as companies three times your size. It's one of the few places where care and craft matter more than budget.</p>
 
 <figure>
-  <img src="https://images.unsplash.com/photo-1594394489799-88bf340a182d?auto=format&fit=crop&w=1200&q=80" alt="Person working on a MacBook Pro at a wooden desk" loading="lazy" />
+  <img src="https://images.unsplash.com/photo-1594394489799-88bf340a182d?auto=format&fit=crop&w=1200&q=80" alt="Person working on a small business web design project at a MacBook Pro" loading="lazy" />
   <figcaption>Your website creates an impression before you say a single word.</figcaption>
 </figure>
 
@@ -69,11 +100,11 @@ export const posts: Post[] = [
   <figcaption>Web design decisions — speed, structure, mobile optimization — directly determine where you rank on Google.</figcaption>
 </figure>
 
-<h2>3. Mobile Isn't Optional</h2>
+<h2>3. Why Mobile Design Matters for Small Business</h2>
 
 <p>63% of all web traffic comes from mobile devices. In restaurants, beauty, and fitness, it's closer to 80%. If your site doesn't work well on a phone, you're losing most of your potential customers before they've seen what you offer.</p>
 
-<p>Google uses mobile-first indexing — meaning it evaluates the mobile version of your site to set your search ranking, not the desktop version. A site that looks great on a laptop but breaks on a phone ranks lower, regardless of how good the content is.</p>
+<p>According to <a href="https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing" target="_blank" rel="noopener noreferrer">Google Search Central</a>, Google uses mobile-first indexing — meaning it evaluates the mobile version of your site to set your search ranking, not the desktop version. A site that looks great on a laptop but breaks on a phone ranks lower, regardless of how good the content is.</p>
 
 <p>Mobile design isn't just making things smaller. It means rethinking navigation, button sizes, font legibility, image load times, and the whole experience for someone browsing with their thumb. Template builders technically display on mobile. They just don't deliver an experience that converts.</p>
 
@@ -98,7 +129,7 @@ export const posts: Post[] = [
 
 <p>That impression is set before you've spoken to anyone. It either warms people up or cools them off before you get a chance.</p>
 
-<h2>6. Good Design Converts Visitors Into Customers</h2>
+<h2>6. How Good Design Converts Visitors Into Customers</h2>
 
 <p>Traffic without conversion is just numbers. A well-designed site turns visitors into leads, leads into bookings, and bookings into revenue. Effective UI design can increase conversion rates by up to 200%.</p>
 
@@ -122,7 +153,9 @@ export const posts: Post[] = [
 
 <p>Most local markets have a significant website quality gap. The majority of small businesses are running sites that are outdated, slow, or built on free templates. That's an opportunity.</p>
 
-<p>When someone is choosing between your business and another with similar reviews and similar services, your website tips the scale. It signals professionalism, care, and attention to detail — qualities people naturally extend to the actual work you do. You don't need to outspend your competitors to outperform them online.</p>
+<p>We've seen it play out directly: a local business with better reviews and lower prices losing customers to a competitor whose site was faster, cleaner, and easier to navigate on a phone. The competitor won before either business said a word. A redesign fixed it.</p>
+
+<p>When someone is choosing between your business and another with similar reviews, your website tips the scale. It signals professionalism, care, and attention to detail — qualities people naturally extend to the actual work you do. You don't need to outspend your competitors to outperform them online. Take a look at <a href="/work">what that looks like in practice</a>.</p>
 
 <h2>10. Your Website Multiplies Every Other Marketing Channel</h2>
 
@@ -134,7 +167,60 @@ export const posts: Post[] = [
 
 <p>AI search tools now decide whether to recommend your business to potential customers. Google AI Mode, ChatGPT, Perplexity — they all read your website to make that call.</p>
 
-<p>A site with well-structured content, clean semantic HTML, schema markup, and fast load times is far more likely to appear in an AI search result than a cluttered, slow, or poorly organized one. Most web design guides aren't talking about this yet. It's already affecting real search results, and it'll only matter more from here.</p>
+<p>A site with well-structured content, clean semantic HTML, <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer">schema markup</a>, and fast load times is far more likely to appear in an AI search result than a cluttered, slow, or poorly organized one. Most web design guides aren't talking about this yet. It's already affecting real search results, and it'll only matter more from here.</p>
+
+<h2>Template Builder vs. Custom Design: A Direct Comparison</h2>
+
+<p>Not all websites cost the same — and not all deliver the same results. Here's how the two main approaches compare for small businesses:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Template Builder (Wix, Squarespace)</th>
+      <th>Custom Design</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Upfront cost</td>
+      <td>Low ($20–$60/month)</td>
+      <td>Higher (one-time project fee)</td>
+    </tr>
+    <tr>
+      <td>Mobile performance</td>
+      <td>Basic</td>
+      <td>Fully optimized</td>
+    </tr>
+    <tr>
+      <td>SEO capability</td>
+      <td>Limited</td>
+      <td>Full control</td>
+    </tr>
+    <tr>
+      <td>Unique to your brand</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Load speed</td>
+      <td>Average</td>
+      <td>Optimized</td>
+    </tr>
+    <tr>
+      <td>Scales with your business</td>
+      <td>Limited</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Long-term ROI</td>
+      <td>Lower</td>
+      <td>Higher</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Template builders are fine for a placeholder while you figure things out. But for a small business trying to rank on Google and convert paying customers, they consistently fall short where it matters most. Our <a href="/services">web design services</a> cover everything in the custom column as standard.</p>
 
 <h2>What Every Small Business Website Needs</h2>
 
@@ -145,7 +231,7 @@ export const posts: Post[] = [
   <li><strong>Social proof</strong> — Google reviews, testimonials, or client logos near the top of the page</li>
   <li><strong>Real photography</strong> of your work, your space, or your products — not generic stock images</li>
   <li><strong>Mobile-optimized navigation</strong> — tap-friendly, simple, fast</li>
-  <li><strong>Page speed under 2.5 seconds</strong> on mobile — check it free at PageSpeed Insights</li>
+  <li><strong>Page speed under 2.5 seconds</strong> on mobile — check it free at <a href="https://pagespeed.web.dev" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a></li>
   <li><strong>Clear calls to action</strong> on every page — book, call, shop, or contact</li>
   <li><strong>On-page SEO basics</strong> — title tags, meta descriptions, heading structure, image alt text</li>
   <li><strong>A contact page</strong> with multiple ways to reach you and a working form</li>
@@ -153,6 +239,9 @@ export const posts: Post[] = [
 </ul>
 
 <h2>Frequently Asked Questions</h2>
+
+<h3>Why is web design important for small business?</h3>
+<p>Web design is the first thing potential customers judge your business on. Before they read a word, they've already decided whether your site — and by extension your business — looks trustworthy. Good design builds credibility, improves your Google ranking, works on every device, and converts visitors into paying customers. A poor one does the opposite, silently, every day.</p>
 
 <h3>Does web design affect SEO?</h3>
 <p>Yes — directly. Page speed, mobile responsiveness, site structure, and how long visitors stay on your pages all influence your Google ranking. A slow, hard-to-navigate, or mobile-broken site underperforms in search regardless of how good the content is.</p>
@@ -166,8 +255,11 @@ export const posts: Post[] = [
 <h3>Why is mobile design important for small business?</h3>
 <p>63% of web traffic comes from mobile, and Google uses the mobile version of your site to set your search ranking. If your site isn't optimized for mobile, you're losing the majority of visitors and ranking lower in search at the same time.</p>
 
+<h3>Why is user experience (UX) important for a small business website?</h3>
+<p>UX is how your site feels to use — how easy it is to find what you're looking for, how quickly pages load, how clearly the next step is marked. When the experience is poor, visitors leave without acting. When it's smooth, they stay longer, engage more, and convert at higher rates. Every second of friction is a potential customer lost.</p>
+
 <h3>How much does web design cost for a small business?</h3>
-<p>A professionally designed small business website typically runs between $2,500 and $15,000 depending on scope, number of pages, and who you work with. Template builders cost less upfront but often cost more in lost business over time — slower load speeds, weaker mobile experience, and limited SEO capability add up.</p>
+<p>A professionally designed small business website typically runs between $2,500 and $15,000 depending on scope, number of pages, and who you work with. Template builders cost less upfront but often cost more in lost business over time — slower load speeds, weaker mobile experience, and limited SEO capability add up. If you want to talk through what your specific project might cost, <a href="/contact">reach out here</a>.</p>
 
 <h2>The Bottom Line</h2>
 
@@ -175,7 +267,7 @@ export const posts: Post[] = [
 
 <p>A great site builds credibility before you speak, ranks higher on Google, converts more of the traffic you're already getting, and makes every other marketing channel more effective. A poor one quietly loses you business every day. (No invoice. Just fewer customers.)</p>
 
-<p>The question isn't whether good web design matters. It's whether yours is doing the job.</p>
+<p>The question isn't whether good web design matters. It's whether yours is doing the job. If you're not sure, <a href="/contact">let's find out</a>.</p>
     `.trim(),
   },
 ];

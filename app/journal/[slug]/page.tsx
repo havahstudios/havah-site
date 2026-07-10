@@ -23,9 +23,36 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const post = getPost(slug);
   if (!post) notFound();
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.seoTitle,
+    description: post.description,
+    image: post.heroImage,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: { "@type": "Organization", name: "HAVAH Studios", url: "https://havahstudios.live" },
+    publisher: { "@type": "Organization", name: "HAVAH Studios", url: "https://havahstudios.live" },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://havahstudios.live/journal/${post.slug}` },
+  };
+
+  const faqSchema = post.faqs && post.faqs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: { "@type": "Answer", text: faq.a },
+        })),
+      }
+    : null;
+
   return (
     <>
       <Nav />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
       <main style={{ paddingTop: "62px" }}>
         {/* Hero */}
         <div style={{ position: "relative", width: "100%", aspectRatio: "21/8", minHeight: "260px", background: "#15171A", overflow: "hidden" }}>

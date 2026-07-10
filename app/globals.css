@@ -162,6 +162,11 @@ body {
 .post-body figure { margin: 40px 0; border-radius: 12px; overflow: hidden; }
 .post-body figure img { width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover; }
 .post-body figcaption { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; color: #9AA0AD; padding-top: 10px; text-align: center; }
+.post-body table { width: 100%; border-collapse: collapse; margin: 40px 0; font-size: 15px; }
+.post-body th { background: #15171A; color: #ffffff; text-align: left; padding: 10px 14px; font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+.post-body td { padding: 10px 14px; border-bottom: 1px solid #DDE1E8; vertical-align: top; color: #20242A; }
+.post-body tr:last-child td { border-bottom: none; }
+.post-body tbody tr:nth-child(even) td { background: #F7F8FA; }
 
 /* ── Service row ─────────────────────────────────────────── */
 .service-row {
