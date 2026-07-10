@@ -41,109 +41,113 @@ export const posts: Post[] = [
       "what should a small business website include",
     ],
     content: `
-<p class="lead">Web design is important for small business because your website is the first thing most customers see — and they decide whether to trust you within three seconds. A well-designed site builds credibility, ranks higher on Google, works on mobile, and converts visitors into paying customers. A poorly designed one quietly loses you business every day.</p>
+<p class="lead">Your website is being judged right now. Somewhere, someone is deciding whether to trust your business based on how your homepage looks and how fast it loaded. They won't tell you this. They'll just leave. A well-designed site builds credibility, ranks on Google, works on every device, and turns visitors into customers. A poorly designed one loses business every single day — quietly, without a word.</p>
 
-<h2>1. First Impressions Happen in Three Seconds</h2>
+<h2>1. First Impressions Are Made Before Anyone Reads Anything</h2>
 
-<p>94% of first impressions are design-related. Before a visitor reads a single word, their brain has already decided whether your business looks credible. There's no handshake, no storefront, no eye contact. Design is doing all the work that physical presence would do in person.</p>
+<p>Online first impressions work differently than in person. There's no handshake, no tone of voice, no moment to explain yourself. Design is doing all of that work before a visitor reads a single word.</p>
 
-<p>A clean, intentional layout signals that you take your work seriously. An outdated or cluttered one signals the opposite — and most visitors won't stick around long enough to be convinced otherwise. This is especially important for small businesses: you can't always compete on budget, but a well-designed website puts you in the same conversation as businesses twice your size.</p>
+<p>94% of first impressions are design-related. A clean, intentional layout signals that you take your work seriously. An outdated or cluttered one signals the opposite — and most visitors won't stick around long enough to be convinced otherwise.</p>
+
+<p>This is actually good news for smaller businesses. A well-designed website puts you in the same conversation as companies three times your size. It's one of the few places where care and craft matter more than budget.</p>
 
 <figure>
   <img src="https://images.unsplash.com/photo-1594394489799-88bf340a182d?auto=format&fit=crop&w=1200&q=80" alt="Person working on a MacBook Pro at a wooden desk" loading="lazy" />
   <figcaption>Your website creates an impression before you say a single word.</figcaption>
 </figure>
 
-<h2>2. Web Design Directly Affects Your SEO</h2>
+<h2>2. Web Design and SEO Are the Same Strategy</h2>
 
-<p>Web design and SEO are not separate strategies — they're the same strategy. Google ranks pages based on signals that are deeply tied to how your site is built: page load speed, mobile-friendliness, site structure, bounce rate, and how long visitors stay on your pages.</p>
+<p>Web design and SEO aren't separate strategies — they're the same one. Google ranks pages based on signals that come directly from how your site is built: load speed, mobile performance, site structure, bounce rate, and how long people actually stay.</p>
 
-<p>Why is page speed important for SEO? Because Google treats a slow site as a bad user experience. Amazon found that a 100-millisecond delay in load time reduces sales by 1%. Google confirmed that page speed is a direct ranking factor. If your site loads slowly on mobile, you're losing the visitor and the ranking at the same time.</p>
+<p>Page speed is a direct ranking factor. Amazon found that a 100-millisecond delay in load time cost them 1% in sales. If your site loads slowly on mobile, you're losing the visitor and the ranking at the same time.</p>
 
-<p>A well-structured site also makes it easier for Google to crawl and index your content — which means your pages get found faster. Clean code, logical navigation, proper heading structure, and descriptive image alt text are all web design decisions that directly affect SEO outcomes.</p>
+<p>A well-structured site also makes it easier for Google to crawl and index your content. Clean code, logical navigation, proper heading structure, descriptive alt text on images — these are web design decisions with direct SEO consequences. You can't separate the two.</p>
 
 <figure>
   <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Performance analytics dashboard on a laptop screen" loading="lazy" />
   <figcaption>Web design decisions — speed, structure, mobile optimization — directly determine where you rank on Google.</figcaption>
 </figure>
 
-<h2>3. Mobile Design Is Non-Negotiable</h2>
+<h2>3. Mobile Isn't Optional</h2>
 
-<p>63% of all web traffic now comes from mobile devices. In industries like restaurants, beauty, and fitness, that number is often closer to 80%. If your site doesn't work well on a phone, you're losing the majority of your potential customers before they even see what you offer.</p>
+<p>63% of all web traffic comes from mobile devices. In restaurants, beauty, and fitness, it's closer to 80%. If your site doesn't work well on a phone, you're losing most of your potential customers before they've seen what you offer.</p>
 
-<p>Google uses mobile-first indexing, which means it evaluates the mobile version of your site to determine your search ranking — not the desktop version. A site that looks great on a laptop but breaks on a phone will rank lower no matter how good the content is.</p>
+<p>Google uses mobile-first indexing — meaning it evaluates the mobile version of your site to set your search ranking, not the desktop version. A site that looks great on a laptop but breaks on a phone ranks lower, regardless of how good the content is.</p>
 
-<p>Mobile design isn't just making things smaller. It requires rethinking navigation, button sizes, font legibility, image load times, and the overall flow for someone browsing with their thumb. This is where template builders like Wix and Squarespace consistently fall short — they technically display on mobile, but they don't deliver the optimized experience that actually converts.</p>
+<p>Mobile design isn't just making things smaller. It means rethinking navigation, button sizes, font legibility, image load times, and the whole experience for someone browsing with their thumb. Template builders technically display on mobile. They just don't deliver an experience that converts.</p>
 
 <figure>
   <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1200&q=80" alt="Person holding a white smartphone while browsing a website" loading="lazy" />
   <figcaption>More than 60% of web traffic comes from phones. If your site isn't built for mobile, you're losing most of your visitors.</figcaption>
 </figure>
 
-<h2>4. It Builds Trust Before You Say a Word</h2>
+<h2>4. Trust Is Established Visually Before It's Established Any Other Way</h2>
 
-<p>People buy from businesses they trust. Online, that trust is established visually before it's established any other way.</p>
+<p>People buy from businesses they trust. Online, that trust is built before a single word is read.</p>
 
-<p>An outdated layout, inconsistent fonts, low-quality images, or a site that looks broken on mobile all create doubt: <em>if they don't take care of their website, what does that say about how they run everything else?</em> It's not always a conscious thought — but it shapes decisions every time.</p>
+<p>An outdated layout, inconsistent fonts, low-quality images, or a broken form on mobile all create the same quiet doubt: <em>if they don't take care of their website, what does that say about how they run everything else?</em> It's rarely a conscious thought — but it shapes decisions every time.</p>
 
-<p>A well-designed website communicates the opposite. It says you pay attention to detail, that you're serious about what you do, and that customers can feel confident giving you their money. For service businesses — contractors, lawyers, health professionals, consultants — credibility is the product before the product is.</p>
+<p>For service businesses — contractors, lawyers, health professionals, consultants — this matters especially. Credibility is the product before the product is.</p>
 
-<h2>5. It Sets the Tone for Customer Service</h2>
+<h2>5. Your Website Tells People What Working With You Will Feel Like</h2>
 
-<p>How your website works tells people how doing business with you will feel. A site with confusing navigation, broken links, or a contact form that's hard to find on mobile signals that working with your business will be similarly frustrating.</p>
+<p>How your site works is a preview of how doing business with you works.</p>
 
-<p>The inverse is also true. A fast, easy-to-navigate site that proactively answers common questions signals that your business is organized and responsive. That impression precedes every actual customer interaction — and it either warms people up or cools them off before you've had a chance to speak.</p>
+<p>A site with confusing navigation, buried contact forms, or broken links on mobile tells visitors that working with your business might feel the same way. A fast, clear site that answers common questions before they're asked signals the opposite — that you're organized, communicative, and worth trusting with their time and money.</p>
 
-<h2>6. It Converts Visitors Into Customers</h2>
+<p>That impression is set before you've spoken to anyone. It either warms people up or cools them off before you get a chance.</p>
 
-<p>Traffic without conversion is just numbers. A well-designed website turns visitors into leads, leads into bookings, and bookings into revenue. Research shows that effective UI design can increase conversion rates by up to 200%.</p>
+<h2>6. Good Design Converts Visitors Into Customers</h2>
 
-<p>Conversion comes from clear messaging that immediately answers "what do you do and why should I care," strategic calls to action that guide people toward the next step, social proof that reduces hesitation, and a frictionless experience that doesn't give people a reason to leave.</p>
+<p>Traffic without conversion is just numbers. A well-designed site turns visitors into leads, leads into bookings, and bookings into revenue. Effective UI design can increase conversion rates by up to 200%.</p>
 
-<p>Every design decision either supports or undermines conversion — button placement, color contrast, page hierarchy, form length, how many clicks it takes to book or buy. A site built without conversion in mind is leaving money on the table with every visitor who bounces.</p>
+<p>Conversion comes from clear messaging — what do you do, and why should someone care — paired with calls to action that make the next step obvious. Social proof that reduces hesitation. A path through your site that doesn't give people a reason to leave before they've acted.</p>
 
-<h2>7. It Creates Brand Consistency</h2>
+<p>Every design choice either supports or undermines that: button placement, color contrast, page hierarchy, how many clicks it takes to reach you. A site built without conversion in mind is leaving money behind with every visitor who bounces.</p>
 
-<p>Your website is the center of your brand online. Everything else — Instagram, Google Business Profile, email, packaging — feeds back to it. When your website's visual identity is inconsistent with your brand everywhere else, it fragments the experience and weakens the impression you're building.</p>
+<h2>7. Your Website Is Where Your Brand Actually Lives</h2>
 
-<p>Good web design establishes and reinforces your brand: colors, typography, tone, the way you present your work. That consistency builds recognition over time — and recognition is what makes people choose you when they're finally ready to buy.</p>
+<p>Instagram, Google Business, email, packaging — everything points back to your website. It's the center of your brand online. When the visual identity on your site doesn't match your brand everywhere else, you fragment the experience you're working to build.</p>
 
-<h2>8. It Makes You Accessible to Every Customer</h2>
+<p>Good web design establishes and reinforces that identity: your colors, your typography, your tone, how you present your work. Consistency builds recognition over time — and recognition is what makes someone choose you when they're finally ready to buy.</p>
 
-<p>An accessible website isn't just a legal consideration — it's a better website for everyone. Accessibility means proper color contrast, readable font sizes, keyboard-navigable menus, and descriptive alt text on images. People with visual impairments, hearing differences, or motor limitations can use your site.</p>
+<h2>8. Accessibility Isn't a Checkbox — It's Better Design</h2>
 
-<p>Many of the principles of accessible design — clear structure, legible type, fast load times, simple navigation — are the same principles that make websites perform better for all users. Accessibility and good design reinforce each other.</p>
+<p>An accessible website isn't just a legal consideration. It's a better website for everyone.</p>
 
-<h2>9. It Keeps You Ahead of Competitors</h2>
+<p>Proper color contrast, readable font sizes, keyboard-navigable menus, descriptive alt text — these allow people with visual impairments, hearing differences, or motor limitations to use your site. They also happen to be the same principles that make websites perform better for every user. Accessibility and good design point in the same direction.</p>
 
-<p>Most local markets still have a significant gap in website quality. The majority of small businesses are running sites that are outdated, slow, or built on free templates. That's actually an opportunity — a professionally designed website is still a genuine differentiator in most categories.</p>
+<h2>9. In Most Local Markets, a Good Website Is Still a Real Differentiator</h2>
 
-<p>When someone is choosing between your barbershop and the one down the street, or your law firm and another with similar reviews, your website tips the scale. It signals professionalism, care, and competence — qualities people naturally extend to the quality of your actual service.</p>
+<p>Most local markets have a significant website quality gap. The majority of small businesses are running sites that are outdated, slow, or built on free templates. That's an opportunity.</p>
 
-<h2>10. It Multiplies Every Other Marketing Channel</h2>
+<p>When someone is choosing between your business and another with similar reviews and similar services, your website tips the scale. It signals professionalism, care, and attention to detail — qualities people naturally extend to the actual work you do. You don't need to outspend your competitors to outperform them online.</p>
 
-<p>Your website is where every other marketing effort lands. Instagram posts link to it. Google ads point to it. Email campaigns send people there. Every mention, every review, every piece of content you create directs people back to your website.</p>
+<h2>10. Your Website Multiplies Every Other Marketing Channel</h2>
 
-<p>If your site doesn't convert when they arrive, you're wasting your entire marketing budget. A well-designed website multiplies the return on everything else you're doing. A poorly designed one quietly undermines it all.</p>
+<p>Your website is where every other marketing effort lands. Instagram posts link to it. Google ads point at it. Email campaigns send people there. Every mention, every review, every piece of content you create sends people back to one place.</p>
 
-<h2>Bonus: Web Design Now Affects AI Search Results</h2>
+<p>If your site doesn't convert when they get there, you're diluting the return on everything else you're doing. A well-designed website multiplies the impact of every other channel. A poor one quietly works against all of them.</p>
 
-<p>In 2026, an increasing share of how people discover businesses runs through AI tools — Google AI Mode, ChatGPT, Perplexity. These tools read your website to decide whether to recommend your business in response to a query.</p>
+<h2>Bonus: Web Design Now Affects Whether AI Recommends Your Business</h2>
 
-<p>A site with clear, well-structured content, proper semantic HTML, schema markup, and fast load times is far more likely to be cited by AI search than a cluttered, slow, or poorly organized one. Web design decisions made today directly shape whether AI recommends your business tomorrow. None of the other guides on this topic are talking about this yet — but it's already affecting real search results.</p>
+<p>AI search tools now decide whether to recommend your business to potential customers. Google AI Mode, ChatGPT, Perplexity — they all read your website to make that call.</p>
 
-<h2>What Should a Small Business Website Include?</h2>
+<p>A site with well-structured content, clean semantic HTML, schema markup, and fast load times is far more likely to appear in an AI search result than a cluttered, slow, or poorly organized one. Most web design guides aren't talking about this yet. It's already affecting real search results, and it'll only matter more from here.</p>
 
-<p>Here's what every small business website needs to actually bring in business:</p>
+<h2>What Every Small Business Website Needs</h2>
+
+<p>Here's what your site needs to actually bring in business:</p>
 
 <ul>
   <li><strong>A clear headline</strong> that explains what you do and who you serve — visible immediately, above the fold</li>
   <li><strong>Social proof</strong> — Google reviews, testimonials, or client logos near the top of the page</li>
-  <li><strong>Real photography</strong> of your work, space, or products — not generic stock images</li>
+  <li><strong>Real photography</strong> of your work, your space, or your products — not generic stock images</li>
   <li><strong>Mobile-optimized navigation</strong> — tap-friendly, simple, fast</li>
   <li><strong>Page speed under 2.5 seconds</strong> on mobile — check it free at PageSpeed Insights</li>
   <li><strong>Clear calls to action</strong> on every page — book, call, shop, or contact</li>
-  <li><strong>On-page SEO basics</strong> — title tags, meta descriptions, H1/H2 structure, image alt text</li>
+  <li><strong>On-page SEO basics</strong> — title tags, meta descriptions, heading structure, image alt text</li>
   <li><strong>A contact page</strong> with multiple ways to reach you and a working form</li>
   <li><strong>SSL certificate</strong> — your site must load over https://, not http://</li>
 </ul>
@@ -151,25 +155,25 @@ export const posts: Post[] = [
 <h2>Frequently Asked Questions</h2>
 
 <h3>Does web design affect SEO?</h3>
-<p>Yes — directly. Page speed, mobile responsiveness, site structure, and how long visitors stay on your pages all influence your Google ranking. A site that's slow, hard to navigate, or broken on mobile will underperform in search regardless of content quality.</p>
+<p>Yes — directly. Page speed, mobile responsiveness, site structure, and how long visitors stay on your pages all influence your Google ranking. A slow, hard-to-navigate, or mobile-broken site underperforms in search regardless of how good the content is.</p>
 
 <h3>Can a bad website hurt my business?</h3>
-<p>Yes. 94% of first impressions are design-related, and visitors form those impressions in three seconds. A poorly designed site doesn't just fail to convert — it actively signals that your business is unprofessional. In competitive markets, that's enough to send potential customers to a competitor.</p>
+<p>Yes. 94% of first impressions are design-related, and they form in under three seconds. A poorly designed site doesn't just fail to convert — it actively signals unprofessionalism. In a competitive market, that's enough to send potential customers to whoever ranks next to you.</p>
 
 <h3>What makes a good small business website?</h3>
-<p>A good small business website loads fast, works on mobile, clearly explains what you do, makes it easy to take the next step, includes social proof, and looks consistent with your brand. It should be built with clean code and basic SEO in place from the start.</p>
+<p>It loads fast, works on mobile, explains what you do clearly, makes the next step obvious, includes proof that you're good at what you do, and looks consistent with your brand. It should be built with clean code and basic SEO in place from the start.</p>
 
 <h3>Why is mobile design important for small business?</h3>
-<p>63% of web traffic comes from mobile devices, and Google uses the mobile version of your site to determine your search ranking. If your site isn't optimized for mobile, you're losing the majority of visitors and ranking lower in search simultaneously.</p>
+<p>63% of web traffic comes from mobile, and Google uses the mobile version of your site to set your search ranking. If your site isn't optimized for mobile, you're losing the majority of visitors and ranking lower in search at the same time.</p>
 
 <h3>How much does web design cost for a small business?</h3>
-<p>A professionally designed small business website typically ranges from $2,500 to $15,000 depending on scope, number of pages, and the studio or designer you work with. Template builders cost less upfront but often cost more in lost business over time due to poor mobile performance, slow load times, and limited SEO capability.</p>
+<p>A professionally designed small business website typically runs between $2,500 and $15,000 depending on scope, number of pages, and who you work with. Template builders cost less upfront but often cost more in lost business over time — slower load speeds, weaker mobile experience, and limited SEO capability add up.</p>
 
 <h2>The Bottom Line</h2>
 
-<p>Web design isn't a vanity expense. It's infrastructure. For small businesses competing in local markets, your website is your most visible asset — it's working (or not working) for you around the clock, with every person who searches for what you offer.</p>
+<p>Web design isn't a vanity expense. It's infrastructure. Your website is the most visible asset your business has — working for you, or against you, around the clock with every person who searches for what you offer.</p>
 
-<p>A great website builds credibility before you speak, ranks higher on Google, converts more of the traffic you're already getting, and makes every other marketing channel more effective. A poor one quietly loses you business every single day without you knowing it.</p>
+<p>A great site builds credibility before you speak, ranks higher on Google, converts more of the traffic you're already getting, and makes every other marketing channel more effective. A poor one quietly loses you business every day. (No invoice. Just fewer customers.)</p>
 
 <p>The question isn't whether good web design matters. It's whether yours is doing the job.</p>
     `.trim(),
