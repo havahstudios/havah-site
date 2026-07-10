@@ -9,7 +9,22 @@ export interface LocationPage {
   subtext: string;
   metaTitle: string;
   metaDescription: string;
+  published: boolean;
 }
+
+// ─── Sitemap control ─────────────────────────────────────────────────────────
+// Add slugs here each week to include them in the sitemap (and Google discovery).
+// Pages not listed here still exist and are accessible by direct URL —
+// they just won't be submitted to Google until you add them.
+//
+// Slug format: lowercase, hyphens, e.g. "web-design-santa-monica"
+const PUBLISHED_SLUGS: string[] = [
+  "web-design-santa-monica",
+  "web-design-venice",
+  "web-design-culver-city",
+  "web-design-beverly-hills",
+  "web-design-west-la",
+];
 
 function toSlug(s: string) {
   return s.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
@@ -133,8 +148,9 @@ function generate(): LocationPage[] {
   for (const [serviceKey, tmpl] of Object.entries(templates)) {
     for (const mod of locationModifiers) {
       const keyword = `${serviceKey} ${mod}`;
+      const locationSlug = toSlug(keyword);
       pages.push({
-        slug: toSlug(keyword),
+        slug: locationSlug,
         keyword,
         service: serviceKey,
         modifier: mod,
@@ -144,14 +160,16 @@ function generate(): LocationPage[] {
         subtext: tmpl.subtext(mod, "location"),
         metaTitle: `${tmpl.label} ${mod} | HAVAH Studios`,
         metaDescription: tmpl.metaDesc(mod, "location"),
+        published: PUBLISHED_SLUGS.includes(locationSlug),
       });
     }
 
     if (serviceKey === "web design") {
       for (const mod of industryModifiers) {
         const keyword = `web design for ${mod}`;
+        const industrySlug = toSlug(keyword);
         pages.push({
-          slug: toSlug(keyword),
+          slug: industrySlug,
           keyword,
           service: serviceKey,
           modifier: mod,
@@ -161,6 +179,7 @@ function generate(): LocationPage[] {
           subtext: `We build websites for ${mod} that rank on Google and convert the clients who find them. One team, no hand-offs.`,
           metaTitle: `Web Design for ${capitalize(mod)} | HAVAH Studios`,
           metaDescription: `HAVAH builds websites for ${mod}. Fast, modern, and built to rank — so the right clients find you first.`,
+          published: PUBLISHED_SLUGS.includes(industrySlug),
         });
       }
     }
