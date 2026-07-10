@@ -30,7 +30,7 @@ export default function JournalPage() {
             Insights for ambitious small businesses
           </h1>
           <p style={{ marginTop: "20px", fontSize: "17px", lineHeight: 1.65, color: "#6B7280", maxWidth: "520px" }}>
-            Web design, SEO, and brand strategy — written for business owners who want to grow online.
+            Web design, SEO, and brand strategy. Written for business owners who want to grow online.
           </p>
         </section>
 

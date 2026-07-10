@@ -118,6 +118,7 @@ Choose photo IDs that actually exist on Unsplash and are relevant to the keyword
 - No qualifiers: "very," "really," "quite," "a bit"
 - No corporate filler: "leverage," "utilize," "seamless," "robust"
 - No exclamation marks
+- No em dashes (—) or hyphens used as dashes in prose. Use a period, comma, or colon instead. Restructure the sentence if needed.
 - No transitions: "furthermore," "additionally," "in conclusion"
 
 ### Humor rules (from humour.md — one or two moments per post):
