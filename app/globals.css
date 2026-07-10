@@ -205,6 +205,26 @@ body {
 .post-body em { font-style: italic; color: #4A5059; }
 .post-body a { color: #B5642E; text-underline-offset: 3px; }
 .post-body a:hover { color: #97501F; }
+.post-body figure {
+  margin: 40px 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.post-body figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.post-body figcaption {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #9AA0AD;
+  padding-top: 10px;
+  text-align: center;
+}
 
 /* ── Service row ─────────────────────────────────────────── */
 .service-row {
