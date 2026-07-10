@@ -146,6 +146,23 @@ body {
   box-shadow: 0 20px 60px rgba(21,23,26,0.12);
 }
 
+/* ── Blog post body ──────────────────────────────────────── */
+.post-body { font-size: 17px; line-height: 1.75; color: #20242A; }
+.post-body .lead { font-size: 19px; line-height: 1.65; color: #15171A; font-weight: 500; margin-bottom: 28px; display: block; }
+.post-body p { margin-bottom: 24px; }
+.post-body h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(20px,2.5vw,28px); letter-spacing: -0.02em; color: #15171A; margin-top: 52px; margin-bottom: 16px; line-height: 1.15; }
+.post-body h3 { font-family: var(--font-display); font-weight: 800; font-size: 20px; color: #15171A; margin-top: 36px; margin-bottom: 12px; }
+.post-body ul { padding-left: 0; list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 10px; }
+.post-body ul li { padding-left: 20px; position: relative; }
+.post-body ul li::before { content: ""; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: #B5642E; }
+.post-body strong { color: #15171A; font-weight: 700; }
+.post-body em { font-style: italic; color: #4A5059; }
+.post-body a { color: #B5642E; text-underline-offset: 3px; }
+.post-body a:hover { color: #97501F; }
+.post-body figure { margin: 40px 0; border-radius: 12px; overflow: hidden; }
+.post-body figure img { width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover; }
+.post-body figcaption { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; color: #9AA0AD; padding-top: 10px; text-align: center; }
+
 /* ── Service row ─────────────────────────────────────────── */
 .service-row {
   transition: background 0.2s ease;
