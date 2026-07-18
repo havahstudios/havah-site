@@ -1,11 +1,8 @@
-const articles = [
+import { posts } from "@/lib/posts";
+
+const placeholders = [
   {
-    cat: "Process",
-    title: "Design in the browser",
-    excerpt: "Why we skip the mockup phase and test ideas where they actually live.",
-    img: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=700&q=70",
-  },
-  {
+    slug: null,
     cat: "SEO",
     title: "Why most SEO fails",
     excerpt: "The three mistakes that kill organic rankings before they have a chance to compound.",
@@ -14,6 +11,16 @@ const articles = [
 ];
 
 export default function Articles() {
+  const realCards = posts.slice(0, 2).map((p) => ({
+    slug: `/journal/${p.slug}`,
+    cat: p.category,
+    title: p.title,
+    excerpt: p.excerpt,
+    img: `${p.heroImage.split("?")[0]}?auto=format&fit=crop&w=700&q=70`,
+  }));
+
+  const cards = [...realCards, ...placeholders].slice(0, 2);
+
   return (
     <section
       className="max-w-[1180px] mx-auto"
@@ -30,10 +37,10 @@ export default function Articles() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-[22px]">
-        {articles.map((a) => (
+        {cards.map((a) => (
           <a
             key={a.title}
-            href="#"
+            href={a.slug ?? "#"}
             className="flex flex-col sm:flex-row items-stretch no-underline rounded-xl overflow-hidden border transition-shadow hover:shadow-md"
             style={{ background: "#FFFFFF", borderColor: "#DDE1E8" }}
           >
