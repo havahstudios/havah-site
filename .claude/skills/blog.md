@@ -9,8 +9,8 @@ Generates a fully SEO-optimized blog post from `keywords.csv`, adds it to `lib/p
 ## Step 1: Read the style guides
 
 Read both files now — before writing a single word of content:
-- `/Users/ilanahdout/Desktop/HAVAH/references/voice.md`
-- `/Users/ilanahdout/Desktop/HAVAH/references/humour.md`
+- `references/voice.md`
+- `references/humour.md`
 
 Internalize the rules. Every sentence you write gets checked against them.
 
@@ -18,13 +18,13 @@ Internalize the rules. Every sentence you write gets checked against them.
 
 ## Step 2: Read the post template
 
-Read `/Users/ilanahdout/Desktop/HAVAH /havah-site/lib/posts.ts` to understand the Post interface and see the existing post as a reference for tone, structure, length, and HTML format.
+Read `lib/posts.ts` to understand the Post interface and see the existing post as a reference for tone, structure, length, and HTML format.
 
 ---
 
 ## Step 3: Pick a keyword
 
-Read `/Users/ilanahdout/Desktop/HAVAH /havah-site/keywords.csv`.
+Read `keywords.csv`.
 
 The CSV has three columns: `keyword`, `used`, `type`. Find the **first row** where column 2 (the middle column) is empty. That is your target keyword.
 
@@ -74,7 +74,7 @@ Example for "web design for bakeries":
 
 ### If PEXELS_API_KEY exists in `.env.local`:
 
-Read `/Users/ilanahdout/Desktop/HAVAH /havah-site/.env.local` to get the key.
+Read `.env.local` to get the key.
 
 Make three WebFetch calls to the Pexels API — one for each image:
 
@@ -377,7 +377,7 @@ Assemble the complete TypeScript object to add to `lib/posts.ts`:
 
 ## Step 8: Update lib/posts.ts
 
-Edit `/Users/ilanahdout/Desktop/HAVAH /havah-site/lib/posts.ts`.
+Edit `lib/posts.ts`.
 
 Add the new post object at the **beginning** of the `posts` array, before the existing post. Do not change the interface or any other part of the file.
 
@@ -385,7 +385,7 @@ Add the new post object at the **beginning** of the `posts` array, before the ex
 
 ## Step 9: Mark the keyword as used
 
-In `/Users/ilanahdout/Desktop/HAVAH /havah-site/keywords.csv`, find the row for this keyword and change the middle column from empty to `yes`.
+In `keywords.csv`, find the row for this keyword and change the middle column from empty to `yes`.
 
 Before: `web design for bakeries,,`
 After:  `web design for bakeries,yes,`
@@ -394,7 +394,7 @@ After:  `web design for bakeries,yes,`
 
 ## Step 10: Build, commit, push
 
-1. Run `npm run build` in `/Users/ilanahdout/Desktop/HAVAH /havah-site`. Fix any TypeScript errors before continuing.
+1. Run `npm run build`. Fix any TypeScript errors before continuing.
 
 2. Stage and commit:
    ```
