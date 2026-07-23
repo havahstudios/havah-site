@@ -61,8 +61,7 @@ function TiltCard({ w, index }: { w: typeof projects[0]; index: number }) {
               {w.name}
             </h3>
             <div
-              className="w-9 h-9 rounded-full border flex items-center justify-center shrink-0 transition-colors group-hover:bg-[#15171A] group-hover:border-[#15171A] group-hover:text-white"
-              style={{ borderColor: "#DDE1E8", color: "#15171A" }}
+              className="w-9 h-9 rounded-full border border-[#DDE1E8] text-[#15171A] flex items-center justify-center shrink-0 transition-colors group-hover:bg-[#15171A] group-hover:border-[#15171A] group-hover:text-white"
             >
               <ArrowRight size={13} />
             </div>
