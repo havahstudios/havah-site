@@ -16,6 +16,218 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "web-designer-restaurant-la",
+    title: "Web Designer for Restaurants in LA: What to Look For",
+    seoTitle: "Web Designer for Restaurants in LA (2026 Guide)",
+    description:
+      "Hiring a web designer for your LA restaurant? Here's what separates a site that fills tables from one that quietly loses reservations.",
+    date: "2026-07-30",
+    readTime: 12,
+    category: "Design",
+    heroImage:
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80",
+    heroAlt:
+      "Web designer restaurant LA project featuring a warm, modern dining room built for online bookings",
+    excerpt:
+      "Hiring the right web designer can be the difference between a restaurant that books out on Fridays and one that quietly loses customers to the site next door. Here's what to actually look for before you hand over a deposit.",
+    keywordCluster: [
+      "restaurant web design Los Angeles",
+      "how to choose a web designer for a restaurant",
+      "best web designer for restaurants",
+      "restaurant website design cost",
+      "hiring a website designer for a restaurant",
+      "LA restaurant website examples",
+      "restaurant SEO Los Angeles",
+      "mobile friendly restaurant website design",
+      "freelance vs agency restaurant web design",
+      "restaurant website design checklist",
+    ],
+    faqs: [
+      {
+        q: "What does a good web designer for a restaurant in LA actually do?",
+        a: "A good web designer for a restaurant in LA builds a site around one goal: turning searches into reservations. That means fast load times, a menu that doesn't require a PDF download, mobile-first navigation, and real photography instead of stock images. They also handle the SEO basics baked into the build, not tacked on after launch.",
+      },
+      {
+        q: "Does hiring a web designer affect SEO for a restaurant?",
+        a: "Yes, directly. Page speed, mobile performance, and site structure all influence how your restaurant ranks for local searches. A slow or hard-to-navigate site underperforms in search no matter how good the food is.",
+      },
+      {
+        q: "Can a bad website hurt a restaurant?",
+        a: "It can, and often does without the owner noticing. First impressions form in about three seconds and most of that judgment is visual. A slow or dated site quietly suggests the same lack of care people worry about in an unfamiliar kitchen, whether or not it's true.",
+      },
+      {
+        q: "What makes a good restaurant website?",
+        a: "Speed, clarity, and proof. It needs to load fast on a phone, show the menu without any downloads, make booking obvious within a few seconds, and back all of that up with real photos and recent reviews.",
+      },
+      {
+        q: "Why is mobile design important for a restaurant?",
+        a: "Because that's where the decision actually happens. Most diners are choosing where to eat from their phone in the moment, and Google ranks your restaurant using that mobile experience, not the desktop version. A clunky mobile site loses the visitor and the ranking at the same time.",
+      },
+      {
+        q: "Why is user experience important for a restaurant?",
+        a: "It's the difference between someone booking a table and someone giving up halfway through. Clear navigation, a visible reservation button, and fast pages keep people moving toward a decision instead of bouncing to the next search result.",
+      },
+      {
+        q: "How much does it cost to hire a web designer for a restaurant in LA?",
+        a: "A professionally built restaurant website in Los Angeles typically runs a few thousand dollars, depending on scope, whether you need online ordering, and how many pages the site needs. Template builders cost less upfront but tend to cost more over time in lost reservations.",
+      },
+    ],
+    content: `
+<p class="lead">Somewhere in Los Angeles, a restaurant owner is searching web designer restaurant LA right now, trying to find someone who can turn a menu and a few photos into actual reservations. That decision matters more than most owners realize. Diners judge a restaurant online before they ever taste the food, and the website is doing all the talking in that moment. Hire the wrong designer and you get a slow template with your logo pasted on top. Hire the right one and your site starts pulling its weight: booking tables, ranking on Google, and making a three-table spot look as credible as a twenty-location chain. (No sous chef required, just someone who can code.)</p>
+
+<h2>1. What Restaurant Website Design in Los Angeles Should Actually Deliver</h2>
+
+<p>A restaurant website has one job: turn a hungry search into a booked table. Most restaurant sites in Los Angeles miss that mark, weighed down by slow load times, PDF menus, and stock photography that could belong to any restaurant in the country. The right web designer builds around that one job first, not the other way around.</p>
+
+<p>Los Angeles has thousands of restaurants competing for the same handful of searches. A cluttered layout or a menu that takes three taps to open pushes a hungry visitor straight back to the results page. They don't complain. They just pick the next listing.</p>
+
+<p>This works in an owner's favor too. A three-table spot with a sharp, fast website can look as credible online as a twenty-location group, because 94% of first impressions are design-related and most of them form before anyone reads a single dish description.</p>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80" alt="Web designer restaurant LA project showing a modern dining room built for online bookings" loading="lazy" />
+  <figcaption>A well-designed dining room should feel this inviting online before anyone walks in.</figcaption>
+</figure>
+
+<h2>2. Why Hiring a Restaurant Web Designer Affects Your Google Ranking</h2>
+
+<p>Design and SEO aren't separate expenses for a restaurant. They're the same project, built by the same person. Google reads load speed, mobile performance, and site structure straight from the code your designer writes, then uses those signals to decide where you rank for searches like "best tacos near me" or "dinner reservations Los Angeles."</p>
+
+<p>A slow menu page loses the click and the ranking in the same three seconds. Core Web Vitals, Google's set of speed and stability scores, get pulled directly from how your site was built, not how good your food photos are. Clean code and fast-loading images aren't a nice-to-have extra. They're the baseline a competent designer should hand you without being asked.</p>
+
+<h2>3. Why Mobile Design Matters for LA Restaurants</h2>
+
+<p>63% of web traffic comes from mobile, and for restaurants that number runs even higher. Someone standing outside deciding where to eat pulls up your site on a phone, often one-handed with a hungry friend waiting.</p>
+
+<p>According to <a href="https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing" target="_blank" rel="noopener noreferrer">Google Search Central</a>, Google ranks your site using the mobile version, not the desktop one. A menu that looks great on a laptop but takes three taps to open on a phone works against you in search results, no matter how it looks on a bigger screen.</p>
+
+<p>Template builders technically display on mobile. They just don't rethink navigation, button size, or how a menu loads for someone standing on a sidewalk with one bar of signal. A web designer who actually understands restaurant traffic closes that gap instead of papering over it.</p>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Website performance dashboard tracking mobile traffic for a Los Angeles restaurant" loading="lazy" />
+  <figcaption>Speed and mobile performance shape where your restaurant ranks on Google.</figcaption>
+</figure>
+
+<h2>4. Trust Signals Diners Look for Before They Book</h2>
+
+<p>People choose a restaurant they trust before they've tasted a single bite. Online, that trust gets built by photos, reviews, and a site that looks cared for, not by a coupon code.</p>
+
+<p>A blurry menu PDF, outdated hours, or a broken reservation link all raise the same quiet question: if they can't maintain their website, what does the kitchen look like? It's rarely a conscious thought, but it shapes where people click next.</p>
+
+<h2>5. How a Better Website Turns Browsers Into Reservations</h2>
+
+<p>Traffic without bookings is just a number in an analytics dashboard. A well-designed site turns a visitor into a reservation, a reservation into a repeat customer, and a repeat customer into someone who brings friends.</p>
+
+<p>That comes from clear structure: menu, hours, and a reservation button visible without scrolling. Every extra click between a hungry visitor and a booked table gives them a reason to give up and order delivery instead.</p>
+
+<h2>6. Keeping Your Brand Consistent Across Instagram, Delivery Apps, and Your Site</h2>
+
+<p>Instagram, Yelp, DoorDash, Google Business Profile. Every one of them points back to your website eventually, so the visual identity needs to match wherever people land.</p>
+
+<p>A good web designer builds a site that reflects the same colors, tone, and photography your restaurant already uses everywhere else. Consistency builds recognition, and recognition is what gets you chosen over the listing someone scrolled past ten minutes earlier.</p>
+
+<h2>7. Accessibility Gives Your LA Restaurant a Real Edge</h2>
+
+<p>An accessible website isn't a legal checkbox. Readable fonts, real color contrast, and a menu that works with a screen reader make the site better for every visitor, not just some of them.</p>
+
+<p>Los Angeles has no shortage of good restaurants, which means the website often becomes the tiebreaker. Most competitors run a template that looks like every other template, so a site built with care stands out simply by not looking the same.</p>
+
+<h2>8. A Real Example: Same Reviews, Different Designer</h2>
+
+<p>We've seen this play out directly: a Los Angeles restaurant with great reviews and fair prices was losing customers to a competitor whose site was faster, cleaner, and easier to use on a phone. Same food quality. Same price point. Different results, based almost entirely on which website loaded first and made booking easier.</p>
+
+<p>The fix wasn't a new menu or a discount. It was a redesign: a site that loaded in under two seconds, showed the menu without a download, and put the reservation button where a thumb could actually reach it. You can <a href="/work">see what that looks like in practice</a>.</p>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1200&q=80" alt="Customer browsing a Los Angeles restaurant website on a smartphone" loading="lazy" />
+  <figcaption>Most diners are deciding where to eat from a phone, not a desktop.</figcaption>
+</figure>
+
+<h2>9. Your Website Multiplies Every Other Marketing Dollar</h2>
+
+<p>Every Instagram post, every Google ad, every glowing review sends someone back to one place: your website. If it converts once they land, every other marketing channel gets more valuable. If it doesn't, you're paying to send traffic to a dead end.</p>
+
+<p>A well-designed website doesn't just sit there. It multiplies the return on the ads you're running, the reviews you're collecting, and the content you're posting every week.</p>
+
+<h2>Bonus: How AI Search Is Changing Things for Los Angeles Restaurants</h2>
+
+<p>AI search tools now decide which restaurants get recommended before a person opens Google Maps. ChatGPT, Perplexity, and Google's AI Overviews all read your website directly to make that call, and a restaurant with thin or disorganized content simply doesn't get mentioned.</p>
+
+<p>A site with clean structure, real menu content, and <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer">schema markup</a> is far more likely to surface in an AI-generated answer than a slow site built on a template. Most restaurants aren't optimizing for this yet, which makes it one of the easier wins available right now.</p>
+
+<h2>Restaurant Website: Template Builder vs. Custom Design</h2>
+
+<p>Not every restaurant website costs the same, and they don't perform the same either. Here's how a template builder compares to a custom-designed site built by a dedicated web designer for a Los Angeles restaurant.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Template Builder (Wix, Squarespace)</th>
+      <th>Custom Design</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Upfront cost</td><td>Low ($20–$60/month)</td><td>Higher (one-time project fee)</td></tr>
+    <tr><td>Mobile performance</td><td>Basic</td><td>Fully optimized</td></tr>
+    <tr><td>SEO capability</td><td>Limited</td><td>Full control</td></tr>
+    <tr><td>Unique to your brand</td><td>No</td><td>Yes</td></tr>
+    <tr><td>Load speed</td><td>Average</td><td>Optimized</td></tr>
+    <tr><td>Scales with your business</td><td>Limited</td><td>Yes</td></tr>
+    <tr><td>Long-term ROI</td><td>Lower</td><td>Higher</td></tr>
+  </tbody>
+</table>
+
+<p>Template builders work fine as a placeholder while you're figuring out what you actually need. For a restaurant trying to rank locally and convert phone traffic into reservations, they fall short exactly where it counts. Our <a href="/services">web design services</a> cover the custom column as standard.</p>
+
+<h2>What Every Los Angeles Restaurant Website Needs</h2>
+
+<p>Here's what a restaurant site needs to actually bring in reservations, no matter who builds it:</p>
+
+<ul>
+  <li><strong>An online menu that loads without a PDF download</strong>, formatted so it's readable on a phone screen</li>
+  <li><strong>A reservation or ordering button visible without scrolling</strong>, on every page</li>
+  <li><strong>Real photography of your food and dining room</strong>, not generic stock images of a table setting</li>
+  <li><strong>Hours, address, and phone number visible in the footer</strong>, consistent with your Google Business Profile</li>
+  <li><strong>Page speed under 2.5 seconds</strong> on mobile. Check it free at <a href="https://pagespeed.web.dev" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a></li>
+  <li><strong>Google reviews or testimonials near the top</strong> of the homepage</li>
+  <li><strong>Mobile-first navigation</strong> built for someone ordering with one hand</li>
+  <li><strong>Local SEO basics</strong>: title tags, schema markup, and a Google Business Profile linked to your site</li>
+  <li><strong>A web designer who's actually built restaurant sites before</strong>, not a generalist working from a template</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What does a good web designer for a restaurant in LA actually do?</h3>
+<p>A good web designer for a restaurant in LA builds a site around one goal: turning searches into reservations. That means fast load times, a menu that doesn't require a PDF download, mobile-first navigation, and real photography instead of stock images. They also handle the SEO basics baked into the build, not tacked on after launch.</p>
+
+<h3>Does hiring a web designer affect SEO for a restaurant?</h3>
+<p>Yes, directly. Page speed, mobile performance, and site structure all influence how your restaurant ranks for local searches. A slow or hard-to-navigate site underperforms in search no matter how good the food is.</p>
+
+<h3>Can a bad website hurt a restaurant?</h3>
+<p>It can, and often does without the owner noticing. First impressions form in about three seconds and most of that judgment is visual. A slow or dated site quietly suggests the same lack of care people worry about in an unfamiliar kitchen, whether or not it's true.</p>
+
+<h3>What makes a good restaurant website?</h3>
+<p>Speed, clarity, and proof. It needs to load fast on a phone, show the menu without any downloads, make booking obvious within a few seconds, and back all of that up with real photos and recent reviews.</p>
+
+<h3>Why is mobile design important for a restaurant?</h3>
+<p>Because that's where the decision actually happens. Most diners are choosing where to eat from their phone in the moment, and Google ranks your restaurant using that mobile experience, not the desktop version. A clunky mobile site loses the visitor and the ranking at the same time.</p>
+
+<h3>Why is user experience important for a restaurant?</h3>
+<p>It's the difference between someone booking a table and someone giving up halfway through. Clear navigation, a visible reservation button, and fast pages keep people moving toward a decision instead of bouncing to the next search result.</p>
+
+<h3>How much does it cost to hire a web designer for a restaurant in LA?</h3>
+<p>A professionally built restaurant website in Los Angeles typically runs a few thousand dollars, depending on scope, whether you need online ordering, and how many pages the site needs. Template builders cost less upfront but tend to cost more over time in lost reservations. If you want a real number for your restaurant, <a href="/contact">reach out here</a>.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>A restaurant website isn't a marketing extra, it's infrastructure. It's working for you or against you every time someone searches for dinner nearby, whether or not you're paying attention to it.</p>
+
+<p>A great site, built by a web designer who understands restaurants, builds trust before anyone walks in, ranks higher for local searches, turns hungry visitors into booked tables, and makes every other marketing dollar work harder.</p>
+
+<p>The question isn't whether hiring a web designer matters for your LA restaurant. It's whether the one running your site right now is doing the job. (If your homepage still says "Under Construction," you already know the answer.) If you're not sure, <a href="/contact">let's find out</a>.</p>
+    `.trim(),
+  },
+  {
     slug: "web-design-restaurant-los-angeles",
     title: "Web Design for Restaurants in Los Angeles: What Actually Works",
     seoTitle: "Web Design for Restaurants in Los Angeles (2026 Guide)",
