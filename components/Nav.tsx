@@ -28,14 +28,10 @@ export default function Nav() {
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 no-underline shrink-0" onClick={() => setOpen(false)}>
-          <div className="w-[28px] h-[28px] rounded-[7px] bg-[#15171A] flex items-center justify-center">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <circle cx="5" cy="5" r="2" fill="white" opacity="0.85" />
-              <circle cx="11" cy="5" r="2" fill="white" opacity="0.85" />
-              <circle cx="5" cy="11" r="2" fill="white" opacity="0.85" />
-              <circle cx="11" cy="11" r="2" fill="white" opacity="0.4" />
-            </svg>
-          </div>
+          <div
+            className="w-[15px] h-[15px] shrink-0"
+            style={{ background: "#B5642E", borderRadius: "3px", transform: "rotate(45deg)" }}
+          />
           <span className="font-black text-[13px] text-[#15171A] uppercase" style={{ fontFamily: "var(--font-display)", letterSpacing: "0.06em" }}>
             HAVAH
           </span>
