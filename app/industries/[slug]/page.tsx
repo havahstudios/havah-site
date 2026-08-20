@@ -7,8 +7,12 @@ import Reveal from "@/components/Reveal";
 import { ArrowNE } from "@/components/ArrowIcon";
 import { industryPages, getIndustryPage, type CaseStudy } from "@/lib/industries";
 
+function isLive(p: { publishDate: Date }) {
+  return p.publishDate <= new Date();
+}
+
 export function generateStaticParams() {
-  return industryPages.map((p) => ({ slug: p.slug }));
+  return industryPages.filter(isLive).map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -18,7 +22,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const page = getIndustryPage(slug);
-  if (!page) return {};
+  if (!page || !isLive(page)) return {};
   return { title: page.metaTitle, description: page.metaDescription };
 }
 
@@ -105,16 +109,30 @@ export default async function IndustryPage({
 }) {
   const { slug } = await params;
   const page = getIndustryPage(slug);
-  if (!page) notFound();
+  if (!page || !isLive(page)) notFound();
 
   return (
     <>
       <Nav />
       <main style={{ paddingTop: "62px" }}>
         {/* Hero */}
-        <section className="bg-white">
+        <section className="relative bg-white overflow-hidden">
           <div
-            className="max-w-[1180px] mx-auto"
+            aria-hidden
+            className="absolute pointer-events-none select-none"
+            style={{
+              top: "-8%",
+              right: "clamp(-60px,-2vw,20px)",
+              width: "clamp(220px,26vw,420px)",
+              height: "clamp(220px,26vw,420px)",
+              background: "#B5642E",
+              opacity: 0.08,
+              borderRadius: "18%",
+              transform: "rotate(45deg)",
+            }}
+          />
+          <div
+            className="max-w-[1180px] mx-auto relative"
             style={{ padding: "clamp(28px,4vw,56px) clamp(20px,5vw,64px) clamp(28px,4vw,52px)" }}
           >
             <div className="flex items-center justify-between mb-10">
@@ -178,63 +196,9 @@ export default async function IndustryPage({
           </div>
         </section>
 
-        {/* Pain points */}
+        {/* Proof — real photos, right up top */}
         <Reveal>
-          <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(48px,6vw,88px) clamp(20px,5vw,64px) 0" }}>
-            <div className="flex items-baseline justify-between border-b mb-8 pb-4" style={{ borderColor: "#DDE1E8" }}>
-              <span className="flex items-center gap-[0.55em]" style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#6B7280" }}>
-                <span className="w-[6px] h-[6px] rounded-full shrink-0" style={{ background: "#B5642E" }} />
-                Why {page.industrySingular.toLowerCase()} sites underperform
-              </span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {page.painPoints.map((p) => (
-                <div key={p.title}>
-                  <h3
-                    className="m-0 mb-2"
-                    style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "19px", letterSpacing: "-0.01em", color: "#15171A" }}
-                  >
-                    {p.title}
-                  </h3>
-                  <p className="m-0" style={{ fontSize: "15px", lineHeight: "1.7", color: "#5A6070" }}>
-                    {p.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </Reveal>
-
-        {/* Deliverables */}
-        <Reveal>
-          <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(56px,7vw,100px) clamp(20px,5vw,64px) 0" }}>
-            <div className="flex items-baseline justify-between border-b mb-8 pb-4" style={{ borderColor: "#DDE1E8" }}>
-              <span className="flex items-center gap-[0.55em]" style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#6B7280" }}>
-                <span className="w-[6px] h-[6px] rounded-full shrink-0" style={{ background: "#B5642E" }} />
-                What we build
-              </span>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-9">
-              {page.deliverables.map((d) => (
-                <div key={d.title}>
-                  <h3
-                    className="m-0 mb-2"
-                    style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "16px", letterSpacing: "-0.01em", color: "#15171A" }}
-                  >
-                    {d.title}
-                  </h3>
-                  <p className="m-0" style={{ fontSize: "14px", lineHeight: "1.65", color: "#5A6070" }}>
-                    {d.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </Reveal>
-
-        {/* Proof */}
-        <Reveal>
-          <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(56px,7vw,100px) clamp(20px,5vw,64px) 0" }}>
+          <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(32px,4vw,48px) clamp(20px,5vw,64px) 0" }}>
             {page.caseStudies.length > 0 ? (
               page.caseStudies.length === 1 ? (
                 <CaseStudyCard c={page.caseStudies[0]} aspect="21/9" />
@@ -272,6 +236,87 @@ export default async function IndustryPage({
                 )}
               </>
             )}
+          </section>
+        </Reveal>
+
+        {/* Billboard statement */}
+        <Reveal>
+          <section style={{ padding: "clamp(56px,7vw,96px) clamp(20px,5vw,64px)", margin: "clamp(48px,6vw,88px) 0 0", background: "#15171A" }}>
+            <p
+              className="m-0 mx-auto text-center font-black uppercase"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(28px,5vw,60px)",
+                lineHeight: "1.05",
+                letterSpacing: "-0.02em",
+                color: "#fff",
+                maxWidth: "900px",
+              }}
+            >
+              {page.billboardLine}
+            </p>
+          </section>
+        </Reveal>
+
+        {/* Pain points */}
+        <Reveal>
+          <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(48px,6vw,88px) clamp(20px,5vw,64px) 0" }}>
+            <div className="flex items-baseline justify-between border-b mb-8 pb-4" style={{ borderColor: "#DDE1E8" }}>
+              <span className="flex items-center gap-[0.55em]" style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#6B7280" }}>
+                <span className="w-[6px] h-[6px] rounded-full shrink-0" style={{ background: "#B5642E" }} />
+                Why {page.industrySingular.toLowerCase()} sites underperform
+              </span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {page.painPoints.map((p) => (
+                <div key={p.title}>
+                  <span
+                    className="block mb-3"
+                    style={{ width: "9px", height: "9px", background: "#B5642E", borderRadius: "2px", transform: "rotate(45deg)" }}
+                  />
+                  <h3
+                    className="m-0 mb-2"
+                    style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "19px", letterSpacing: "-0.01em", color: "#15171A" }}
+                  >
+                    {p.title}
+                  </h3>
+                  <p className="m-0" style={{ fontSize: "15px", lineHeight: "1.7", color: "#5A6070" }}>
+                    {p.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </Reveal>
+
+        {/* Deliverables */}
+        <Reveal>
+          <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(56px,7vw,100px) clamp(20px,5vw,64px) 0" }}>
+            <div className="flex items-baseline justify-between border-b mb-8 pb-4" style={{ borderColor: "#DDE1E8" }}>
+              <span className="flex items-center gap-[0.55em]" style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#6B7280" }}>
+                <span className="w-[6px] h-[6px] rounded-full shrink-0" style={{ background: "#B5642E" }} />
+                What we build
+              </span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-9">
+              {page.deliverables.map((d) => (
+                <div key={d.title}>
+                  <span
+                    className="block mb-3"
+                    style={{ width: "9px", height: "9px", background: "#B5642E", borderRadius: "2px", transform: "rotate(45deg)" }}
+                  />
+                  <h3
+                    className="m-0 mb-2"
+                    style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "16px", letterSpacing: "-0.01em", color: "#15171A" }}
+                  >
+                    {d.title}
+                  </h3>
+                  <p className="m-0" style={{ fontSize: "14px", lineHeight: "1.65", color: "#5A6070" }}>
+                    {d.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </section>
         </Reveal>
 

@@ -15,6 +15,10 @@ export interface IndustryPage {
   eyebrow: string;
   headline: [string, string, string];
   subtext: string;
+  // Page won't be built, linked, or listed until this date.
+  publishDate: Date;
+  // Short punchy line for the full-width statement band.
+  billboardLine: string;
   painPoints: { title: string; body: string }[];
   deliverables: { title: string; body: string }[];
   // Real case studies in this exact industry. Rendered as full proof cards.
@@ -55,6 +59,8 @@ export const industryPages: IndustryPage[] = [
     headline: ["WEBSITES", "LAWYERS", "GET HIRED FROM"],
     subtext:
       "Most law firm websites are a digital business card. Ours are built to turn someone's worst day into your next client, with the compliance and intake mechanics most web designers miss.",
+    publishDate: new Date("2026-08-20"),
+    billboardLine: "Built to get the call.",
     painPoints: [
       {
         title: "Bar advertising rules aren't optional",
@@ -115,6 +121,8 @@ export const industryPages: IndustryPage[] = [
     headline: ["WEBSITES", "DINERS", "ORDER FROM"],
     subtext:
       "Most restaurant websites are a PDF menu bolted onto a template. Ours are built to get found on \"restaurants near me,\" load fast on a phone, and make ordering or booking a table the easiest thing someone does all day.",
+    publishDate: new Date("2026-09-03"),
+    billboardLine: "Built to fill the table.",
     painPoints: [
       {
         title: "Local search decides where people eat",

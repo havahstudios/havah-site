@@ -3,6 +3,7 @@ import { MetadataRoute } from "next";
 export const dynamic = "force-dynamic";
 import { posts } from "@/lib/posts";
 import { locationPages } from "@/lib/locations";
+import { industryPages } from "@/lib/industries";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://havahstudios.live";
@@ -32,5 +33,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     }));
 
-  return [...core, ...journal, ...locations];
+  const industries = industryPages
+    .filter((p) => p.publishDate <= new Date())
+    .map((p) => ({
+      url: `${base}/industries/${p.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }));
+
+  return [...core, ...journal, ...locations, ...industries];
 }

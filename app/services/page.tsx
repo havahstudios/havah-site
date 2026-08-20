@@ -8,6 +8,7 @@ const mono = { fontFamily: "var(--font-mono)" } as React.CSSProperties;
 const display = { fontFamily: "var(--font-display)" } as React.CSSProperties;
 
 export default function ServicesPage() {
+  const liveIndustryPages = industryPages.filter((p) => p.publishDate <= new Date());
   return (
     <>
       <Nav />
@@ -185,7 +186,7 @@ export default function ServicesPage() {
         </div>
 
         {/* ── Industries ── */}
-        {industryPages.length > 0 && (
+        {liveIndustryPages.length > 0 && (
           <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(48px,6vw,88px) clamp(20px,5vw,64px) 0" }}>
             <div className="flex items-baseline justify-between border-b mb-8 pb-4" style={{ borderColor: "#DDE1E8" }}>
               <span className="flex items-center gap-[0.55em]" style={{ ...mono, fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#6B7280" }}>
@@ -194,7 +195,7 @@ export default function ServicesPage() {
               </span>
             </div>
             <div className="flex flex-wrap gap-3">
-              {industryPages.map((p) => (
+              {liveIndustryPages.map((p) => (
                 <Link
                   key={p.slug}
                   href={`/industries/${p.slug}`}
