@@ -16,6 +16,215 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "web-design-hair-salon",
+    title: "Web Design for Hair Salons: What Actually Fills the Chair",
+    seoTitle: "Web Design Hair Salon Guide: What Works (2026)",
+    description:
+      "Web design for a hair salon should fill chairs, not just look pretty. Here's what a well-built salon site gets right, and what quietly costs you bookings.",
+    date: "2026-08-20",
+    readTime: 10,
+    category: "Design",
+    heroImage:
+      "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=80",
+    heroAlt:
+      "Web design hair salon project showing a bright salon interior with styling chairs ready for clients",
+    excerpt:
+      "Hair salon website design isn't about a moodier photo or a prettier font. It's about how fast someone on a phone can see your prices, trust your work, and book a slot before they get distracted.",
+    keywordCluster: [
+      "hair salon website design ideas",
+      "how to design a website for a hair salon",
+      "salon website design examples",
+      "hair salon online booking website",
+      "salon SEO tips",
+      "hair salon website cost",
+      "beauty salon web design",
+      "mobile booking for hair salons",
+      "how to get more clients for a hair salon",
+      "best hair salon websites",
+    ],
+    faqs: [
+      {
+        q: "What should web design for a hair salon include?",
+        a: "Web design for a hair salon should include online booking that works in two taps, a visible price list, real photos of your own work, stylist profiles, and a site that loads in under two seconds on a phone. Local SEO belongs in the build, not in a plugin added six months later. Anything missing from that list gives a first-time client a reason to book at the salon down the street instead.",
+      },
+      {
+        q: "Does web design affect SEO for a hair salon?",
+        a: "Yes, directly. Page speed, mobile performance, and how your pages are structured all feed into where you rank for searches like hair salon near me. A slow, cluttered site ranks below a fast, clear one even when the work is better.",
+      },
+      {
+        q: "Can a bad website hurt a hair salon?",
+        a: "It can, and most owners never see it happening. People form a first impression in roughly three seconds and almost all of it comes from design. A dated or slow site suggests a salon that stopped paying attention, which is the last thing you want someone thinking before they hand you their hair.",
+      },
+      {
+        q: "What makes a good hair salon website?",
+        a: "Speed, proof, and a booking button you cannot miss. It loads fast on a phone, shows real photos of your stylists' work instead of stock models, lists prices without a phone call, and gets someone from landing page to confirmed appointment in under a minute.",
+      },
+      {
+        q: "Why is mobile design important for a hair salon?",
+        a: "Because that is where the booking happens. Most clients look you up on a phone, often late at night, and Google ranks your salon using that mobile version of your site. A booking flow that pinches and zooms loses the client and the ranking in the same visit.",
+      },
+      {
+        q: "Why is user experience important for a hair salon?",
+        a: "It decides whether someone books or bounces. Clear navigation, an obvious booking button, and honest pricing keep a first-time client moving toward an appointment instead of opening three competitor tabs to compare.",
+      },
+      {
+        q: "How much does web design cost for a hair salon?",
+        a: "A professionally built hair salon website usually runs a few thousand dollars depending on how many stylists you feature, whether you need booking software integrated, and how much photography the project includes. Template builders cost less upfront and tend to cost more over time in appointments nobody ever booked.",
+      },
+    ],
+    content: `
+<p class="lead">Search web design hair salon and you'll get a hundred agencies promising something beautiful. Beautiful isn't your problem. Your salon looks good, your stylists do good work, and your reviews say so. The problem is that most people decide whether to book with you on a phone, at nine at night, on a site that takes eight seconds to show them a price list. That decision costs you a full chair on Tuesday and you never find out it happened. (No invoice. Just a quieter week.)</p>
+
+<h2>1. Hair Salon Website Design Ideas That Actually Fill Chairs</h2>
+
+<p>Good salon web design starts with one question: what does a first-time client need to see before they'll trust a stranger with their hair? Usually three things. Your work, your prices, and how quickly they can get a slot.</p>
+
+<p>Most hair salon website design ideas skip straight past that. They lead with a full-screen video of hands running through hair, then bury the price list behind a contact form and the booking link in a footer. Someone who came to book leaves without booking, and the site looks great doing it.</p>
+
+<p>Put the answers first and the rest of the layout mostly sorts itself out. Roughly 94% of first impressions come down to design, and that judgment forms before anyone reads a word about your award-winning balayage.</p>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80" alt="Web design hair salon project showing a bright salon interior with styling chairs ready for clients" loading="lazy" />
+  <figcaption>Strong hair salon website design leads with the work, the prices, and the booking button.</figcaption>
+</figure>
+
+<h2>2. How Salon SEO and Web Design Work Together</h2>
+
+<p>Design and SEO aren't separate line items for a salon. They're the same decisions seen from two angles. Every choice about image size, page structure, and layout either helps Google understand your salon or gets in the way.</p>
+
+<p>Most salon SEO tips you'll read online focus on keywords and forget the build. Page speed and mobile performance come straight from how the site was made, and they decide whether you show up for "hair salon near me" at all. A gorgeous site that takes six seconds to load its gallery ranks below a plain one that loads in two.</p>
+
+<h2>3. Why Mobile Booking Design Matters for Hair Salons</h2>
+
+<p>63% of web traffic comes from mobile, and for salons the share runs higher. People look you up between meetings, on the couch, in the ten minutes before bed when they finally admit their roots need attention.</p>
+
+<p>According to <a href="https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing" target="_blank" rel="noopener noreferrer">Google Search Central</a>, Google ranks your salon on the mobile version of your site, not the desktop one. So a gallery that looks stunning on a laptop and takes four taps to load on a phone works against your ranking every day it stays up.</p>
+
+<p>Template builders technically show up on a phone. They rarely rethink tap target size, how many screens stand between "I like this stylist" and "booked," or how a page full of high-resolution before-and-afters behaves on a weak signal.</p>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Performance dashboard tracking mobile traffic and bookings for a hair salon website" loading="lazy" />
+  <figcaption>Speed and mobile performance decide where your salon shows up in local search.</figcaption>
+</figure>
+
+<h2>4. The Trust Signals That Turn a Visitor Into a Booking</h2>
+
+<p>Booking a haircut with someone new takes more nerve than ordering dinner. A bad meal lasts an hour. A bad cut lasts three months, and the client knows it before they click anything.</p>
+
+<p>Real photos of your own work carry that weight better than anything you can write. Stock images of models with impossible hair do the opposite: they tell a visitor you either don't photograph your work or don't want to show it. Add stylist names, recent reviews, and honest pricing, and most of the hesitation disappears.</p>
+
+<h2>5. The Booking Flow Is the Design</h2>
+
+<p>Traffic without appointments is just a number in a dashboard. The real measure of your site is how many strangers it converts into someone sitting in a chair on a Thursday afternoon.</p>
+
+<p>That comes from structure. A booking button visible without scrolling, prices you don't have to call for, and a flow that ends in a confirmed slot rather than a form that promises someone will get back to you. Every extra step is a chance for the client to open a competitor's tab and never come back.</p>
+
+<h2>6. Brand Consistency: Your Site Should Feel Like Your Salon</h2>
+
+<p>Clients notice the gap between how your salon looks and how your website looks, even if they never name it. A warm, minimal studio with a loud, cluttered site sends two different messages, and the site is the one they see first.</p>
+
+<p>Consistent colours, type, and photography make the whole thing feel like one business run by people who care about details. That impression carries over to the assumption that matters most: you'll care about their hair the same way.</p>
+
+<h2>7. Accessibility and the Gap Between You and the Salon Down the Street</h2>
+
+<p>Most salon sites in your area were built once and left alone. That's your opening. Legible text, real colour contrast, alt text on your gallery, and pages that work with a screen reader put you ahead of almost every competitor without a single new marketing dollar.</p>
+
+<p>Accessibility helps your ranking too, because the same structure that helps a screen reader helps Google. You get a site more people can use and better search visibility from the same set of decisions.</p>
+
+<h2>8. What This Looks Like in Practice</h2>
+
+<p>We've seen this play out directly: a hair salon with great reviews and fair prices was losing clients to a competitor whose site was faster, cleaner, and easier to use on a phone. Same neighbourhood, same price range, weaker stylists. The competitor just made booking take fifteen seconds instead of two minutes.</p>
+
+<p>Fixing that isn't a redesign of the brand. It's a rebuild of the path between a search result and a confirmed appointment: you can <a href="/work">see what that looks like in practice</a> in the work we've done for other local businesses.</p>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1200&q=80" alt="Client booking a hair salon appointment on a smartphone" loading="lazy" />
+  <figcaption>Most salon bookings start on a phone, often long after the salon has closed.</figcaption>
+</figure>
+
+<h2>9. Everything Else You're Doing Points Back Here</h2>
+
+<p>Your website isn't one marketing channel among several. It's the place all the others land. Instagram sends people to your link in bio, Google Ads sends people to your booking page, and a five-star review sends someone straight to a search for your name.</p>
+
+<p>So a weak site quietly taxes every dollar you spend elsewhere. Fix it and the same ad budget, the same posting schedule, and the same word of mouth all start converting better, without you doing anything differently.</p>
+
+<h2>Bonus: How AI Search Is Changing Things for Hair Salons</h2>
+
+<p>People now ask ChatGPT and Google's AI summaries where to get their hair done, and those answers get pulled from sites the machines can actually read. If your prices sit inside an image and your hours live in a PDF, you're invisible to that whole layer of search.</p>
+
+<p>Answer engine optimization comes down to making your information machine-readable: clear headings, plain text answers to the questions clients ask, and <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer">schema markup</a> that labels your services, prices, reviews, and location. Salons that get this right start showing up in AI answers while their competitors wonder where the traffic went.</p>
+
+<h2>Hair Salon Website: Template Builder vs. Custom Design</h2>
+
+<p>Both options put a salon website online. They differ in what happens after month three.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Template Builder (Wix, Squarespace)</th>
+      <th>Custom Design</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Upfront cost</td><td>Low ($20–$60/month)</td><td>Higher (one-time project fee)</td></tr>
+    <tr><td>Mobile performance</td><td>Basic</td><td>Fully optimized</td></tr>
+    <tr><td>SEO capability</td><td>Limited</td><td>Full control</td></tr>
+    <tr><td>Unique to your brand</td><td>No</td><td>Yes</td></tr>
+    <tr><td>Load speed</td><td>Average</td><td>Optimized</td></tr>
+    <tr><td>Scales with your business</td><td>Limited</td><td>Yes</td></tr>
+    <tr><td>Long-term ROI</td><td>Lower</td><td>Higher</td></tr>
+  </tbody>
+</table>
+<p>A template gets you online this weekend. A custom build gets you a site that ranks, loads, and books while you're cutting hair, which is the part that pays for itself: here's more on <a href="/services">our web design services</a>.</p>
+
+<h2>What Every Hair Salon Website Needs</h2>
+
+<p>Run your current site against this list and count the misses.</p>
+<ul>
+  <li><strong>Online booking in two taps</strong> from any page, not a contact form that waits for someone to check email.</li>
+  <li><strong>A visible price list</strong> so nobody has to call to find out whether they can afford you.</li>
+  <li><strong>Real photos of your own work</strong> shot in your salon, on your clients, with your lighting.</li>
+  <li><strong>Stylist profiles</strong> with names, specialties, and a way to book that specific person.</li>
+  <li><strong>Page speed under 2.5 seconds</strong> on mobile: check yours free at <a href="https://pagespeed.web.dev" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a>.</li>
+  <li><strong>Recent reviews on the page</strong>, not just a link out to Google.</li>
+  <li><strong>Accurate hours, address, and a tap-to-call number</strong> that matches your Google Business Profile exactly.</li>
+  <li><strong>Local SEO built into the structure</strong>, including your neighbourhood in page titles and headings.</li>
+  <li><strong>A cancellation and deposit policy</strong> stated plainly, so first-time clients know what they're agreeing to.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What should web design for a hair salon include?</h3>
+<p>Web design for a hair salon should include online booking that works in two taps, a visible price list, real photos of your own work, stylist profiles, and a site that loads in under two seconds on a phone. Local SEO belongs in the build, not in a plugin added six months later. Anything missing from that list gives a first-time client a reason to book at the salon down the street instead.</p>
+
+<h3>Does web design affect SEO for a hair salon?</h3>
+<p>Yes, directly. Page speed, mobile performance, and how your pages are structured all feed into where you rank for searches like hair salon near me. A slow, cluttered site ranks below a fast, clear one even when the work is better.</p>
+
+<h3>Can a bad website hurt a hair salon?</h3>
+<p>It can, and most owners never see it happening. People form a first impression in roughly three seconds and almost all of it comes from design. A dated or slow site suggests a salon that stopped paying attention, which is the last thing you want someone thinking before they hand you their hair.</p>
+
+<h3>What makes a good hair salon website?</h3>
+<p>Speed, proof, and a booking button you cannot miss. It loads fast on a phone, shows real photos of your stylists' work instead of stock models, lists prices without a phone call, and gets someone from landing page to confirmed appointment in under a minute.</p>
+
+<h3>Why is mobile design important for a hair salon?</h3>
+<p>Because that is where the booking happens. Most clients look you up on a phone, often late at night, and Google ranks your salon using that mobile version of your site. A booking flow that pinches and zooms loses the client and the ranking in the same visit.</p>
+
+<h3>Why is user experience important for a hair salon?</h3>
+<p>It decides whether someone books or bounces. Clear navigation, an obvious booking button, and honest pricing keep a first-time client moving toward an appointment instead of opening three competitor tabs to compare.</p>
+
+<h3>How much does web design cost for a hair salon?</h3>
+<p>A professionally built hair salon website usually runs a few thousand dollars depending on how many stylists you feature, whether you need booking software integrated, and how much photography the project includes. Template builders cost less upfront and tend to cost more over time in appointments nobody ever booked. If you want a real number for your salon, <a href="/contact">reach out here</a>.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>Your website is infrastructure, the same as your chairs and your booking software. It runs every hour you're closed, handles every client who finds you at midnight, and decides how many of them are still there in the morning.</p>
+
+<p>A great salon site does four things at once. It shows the work, answers the price question, makes booking feel effortless, and does all of it in under two seconds on a phone with two bars of signal.</p>
+
+<p>So the question isn't whether your website affects how many chairs get filled. It already does, every day, whether or not anyone's watching the numbers. (Your competitor's site is watching them.) The only question left is which direction yours is pushing: <a href="/contact">let's find out</a>.</p>
+`,
+  },
+  {
     slug: "web-design-fast-food-restaurant",
     title: "Web Design for Fast Food Restaurants: What Actually Converts",
     seoTitle: "Web Design for Fast Food Restaurants (2026 Guide)",
