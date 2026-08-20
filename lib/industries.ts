@@ -9,6 +9,7 @@ export interface CaseStudy {
 export interface IndustryPage {
   slug: string;
   industry: string;
+  industrySingular: string;
   metaTitle: string;
   metaDescription: string;
   eyebrow: string;
@@ -16,15 +17,37 @@ export interface IndustryPage {
   subtext: string;
   painPoints: { title: string; body: string }[];
   deliverables: { title: string; body: string }[];
-  caseStudy: CaseStudy | null;
+  // Real case studies in this exact industry. Rendered as full proof cards.
+  caseStudies: CaseStudy[];
+  // Shown only when caseStudies is empty.
   proofNote: string;
+  // Real work from other industries, shown alongside proofNote so the page
+  // still carries real photos even without a same-industry case study yet.
+  proofGallery?: CaseStudy[];
   faqs: { q: string; a: string }[];
 }
+
+const kosherHibachi: CaseStudy = {
+  name: "Kosher Hibachi LA",
+  meta: "Restaurant — Los Angeles, CA",
+  href: "https://kosherhibachila.com/",
+  img: "/kosher-hibachi.jpg",
+  note: "A hibachi spot with a narrow kosher audience and a wide radius to reach. The site had to load fast on a phone, surface the menu without hunting, and make the phone number impossible to miss.",
+};
+
+const bennysGrill: CaseStudy = {
+  name: "Benny's Grill LA",
+  meta: "Restaurant — Los Angeles, CA",
+  href: "https://www.bennysgrilllosangeles.com/",
+  img: "/bennys-grill.jpg",
+  note: "A neighborhood grill that needed its menu, hours, and location to be the first thing anyone sees, not the third scroll.",
+};
 
 export const industryPages: IndustryPage[] = [
   {
     slug: "law-firm-web-design",
     industry: "Law Firms",
+    industrySingular: "Law Firm",
     metaTitle: "Law Firm Web Design | HAVAH Studios",
     metaDescription:
       "Websites for law firms built around intake conversion, practice-area SEO, and bar advertising compliance. Not a template with your name swapped in.",
@@ -58,9 +81,10 @@ export const industryPages: IndustryPage[] = [
       { title: "LegalService schema markup", body: "Structured data so Google understands your practice areas, location, and attorneys. It changes how you show up in search and AI results." },
       { title: "Built to load fast on a phone", body: "Because the person searching is often standing in a parking lot, not at a desk." },
     ],
-    caseStudy: null,
+    caseStudies: [],
     proofNote:
       "Judge us on the work. [Kosher Hibachi LA](/work) and [Benny's Grill](/work) are two Los Angeles businesses where the website had to turn a scroll into a phone call, fast. That's the same job we'd be doing for your firm: get someone to stop scrolling and call.",
+    proofGallery: [kosherHibachi, bennysGrill],
     faqs: [
       {
         q: "Do law firm websites need to follow specific advertising rules?",
@@ -77,6 +101,64 @@ export const industryPages: IndustryPage[] = [
       {
         q: "Can you add consultation scheduling or intake forms?",
         a: "Yes. We can build a simple consultation request form, connect a scheduling tool, or set up click-to-call and click-to-text. Whatever gets someone from your website into a conversation with your firm fastest.",
+      },
+    ],
+  },
+  {
+    slug: "restaurant-web-design",
+    industry: "Restaurants",
+    industrySingular: "Restaurant",
+    metaTitle: "Restaurant Web Design | HAVAH Studios",
+    metaDescription:
+      "Websites for restaurants built around your menu, your hours, and getting found on \"restaurants near me\" searches. Fast on a phone, easy to update yourself.",
+    eyebrow: "Web Design — Restaurants",
+    headline: ["WEBSITES", "DINERS", "ORDER FROM"],
+    subtext:
+      "Most restaurant websites are a PDF menu bolted onto a template. Ours are built to get found on \"restaurants near me,\" load fast on a phone, and make ordering or booking a table the easiest thing someone does all day.",
+    painPoints: [
+      {
+        title: "Local search decides where people eat",
+        body: "Most people don't type your restaurant's name. They type \"sushi near me\" or \"date night spot open now\" and pick from whatever Google shows first. If your Google Business Profile and site aren't built to win that search, you're invisible before someone even sees your menu.",
+      },
+      {
+        title: "A slow menu loses the table before they order",
+        body: "A PDF menu that takes ten seconds to load on a phone is ten seconds someone spends deciding between you and the restaurant next door. The menu needs to open fast, read easily on a small screen, and never make someone pinch and zoom.",
+      },
+      {
+        title: "Hours and location have to be right everywhere",
+        body: "Nothing kills a first visit faster than showing up to a locked door because Google said you were open. Your hours, address, and phone number need to match across your site, Google, and every directory you're listed on.",
+      },
+      {
+        title: "Photos sell the food before anyone tastes it",
+        body: "People decide where to eat with their eyes first. Blurry phone photos or generic stock food shots read as generic. Real photography of your actual dishes and space does more to fill a table than any line of copy.",
+      },
+    ],
+    deliverables: [
+      { title: "A fast, real menu", body: "No PDF download. A menu that opens instantly and reads clean on any phone." },
+      { title: "Local SEO built in", body: "Restaurant schema markup and a site structured to win \"near me\" searches, not just your name." },
+      { title: "One-tap ordering and reservations", body: "Connected to whatever ordering or reservation platform you already use, or set up from scratch." },
+      { title: "Hours and location up front", body: "Visible without scrolling, synced with your Google listing, with a map baked in." },
+      { title: "Real photography, not stock", body: "Your actual dishes and space, shot and placed to make someone hungry in the first three seconds." },
+      { title: "Built for you to update", body: "Change hours, specials, or the menu yourself without calling a developer every time." },
+    ],
+    caseStudies: [kosherHibachi, bennysGrill],
+    proofNote: "",
+    faqs: [
+      {
+        q: "Do I need a website if I'm already on Yelp and Google?",
+        a: "Yes. Yelp and Google show your listing next to every competitor's ad and reviews you don't control. Your own site is the one place that's entirely about you, and it's what your local SEO points back to for ranking in the first place.",
+      },
+      {
+        q: "How much does a restaurant website cost?",
+        a: "A custom restaurant website typically runs between $2,500 and $10,000, depending on whether you need online ordering integration, a full photo shoot, or multiple location pages. Template builders cost less upfront but usually can't handle local SEO or fast mobile menus well.",
+      },
+      {
+        q: "Can you connect online ordering or reservation platforms?",
+        a: "Yes. We can connect whatever ordering or reservation system you already use, or help you pick one if you don't have one yet.",
+      },
+      {
+        q: "Will my menu be easy for me to update myself?",
+        a: "Yes. You'll be able to update hours, specials, and menu items yourself without calling us every time a price changes.",
       },
     ],
   },

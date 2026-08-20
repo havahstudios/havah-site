@@ -5,7 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import { ArrowNE } from "@/components/ArrowIcon";
-import { industryPages, getIndustryPage } from "@/lib/industries";
+import { industryPages, getIndustryPage, type CaseStudy } from "@/lib/industries";
 
 export function generateStaticParams() {
   return industryPages.map((p) => ({ slug: p.slug }));
@@ -35,6 +35,67 @@ function renderWithLinks(text: string) {
       </Link>
     );
   });
+}
+
+function CaseStudyCard({ c, aspect }: { c: CaseStudy; aspect: string }) {
+  return (
+    <a
+      href={c.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative block overflow-hidden rounded-2xl no-underline group"
+      style={{ aspectRatio: aspect, background: "#0A0C0F" }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={c.img}
+        alt={c.name}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+        style={{ filter: "grayscale(0.3) contrast(1.08)" }}
+      />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,12,15,0.92) 0%, rgba(10,12,15,0.2) 55%, transparent 100%)" }} />
+      <div className="absolute bottom-0 left-0 right-0" style={{ padding: "28px" }}>
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)" }}>
+          {c.meta}
+        </span>
+        <h3 className="m-0 mt-1" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(18px,2.4vw,26px)", textTransform: "uppercase", color: "#fff" }}>
+          {c.name}
+        </h3>
+        <p className="m-0 mt-2" style={{ fontSize: "13.5px", color: "rgba(255,255,255,0.75)", maxWidth: "480px" }}>
+          {c.note}
+        </p>
+      </div>
+    </a>
+  );
+}
+
+function GalleryCard({ c }: { c: CaseStudy }) {
+  return (
+    <a
+      href={c.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative block overflow-hidden rounded-xl no-underline group"
+      style={{ aspectRatio: "4/3", background: "#0A0C0F" }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={c.img}
+        alt={c.name}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+        style={{ filter: "grayscale(0.3) contrast(1.08)" }}
+      />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,12,15,0.88) 0%, rgba(10,12,15,0.1) 60%, transparent 100%)" }} />
+      <div className="absolute bottom-0 left-0 right-0" style={{ padding: "16px" }}>
+        <span style={{ fontFamily: "var(--font-mono)", fontSize: "9.5px", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)" }}>
+          {c.meta}
+        </span>
+        <h3 className="m-0 mt-0.5" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "15px", textTransform: "uppercase", color: "#fff" }}>
+          {c.name}
+        </h3>
+      </div>
+    </a>
+  );
 }
 
 export default async function IndustryPage({
@@ -123,7 +184,7 @@ export default async function IndustryPage({
             <div className="flex items-baseline justify-between border-b mb-8 pb-4" style={{ borderColor: "#DDE1E8" }}>
               <span className="flex items-center gap-[0.55em]" style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#6B7280" }}>
                 <span className="w-[6px] h-[6px] rounded-full shrink-0" style={{ background: "#B5642E" }} />
-                Why {page.industry.toLowerCase()} sites underperform
+                Why {page.industrySingular.toLowerCase()} sites underperform
               </span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -174,43 +235,42 @@ export default async function IndustryPage({
         {/* Proof */}
         <Reveal>
           <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(56px,7vw,100px) clamp(20px,5vw,64px) 0" }}>
-            {page.caseStudy ? (
-              <a
-                href={page.caseStudy.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative block overflow-hidden rounded-2xl no-underline"
-                style={{ aspectRatio: "21/9", background: "#0A0C0F" }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={page.caseStudy.img}
-                  alt={page.caseStudy.name}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  style={{ filter: "grayscale(0.3) contrast(1.08)" }}
-                />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,12,15,0.92) 0%, rgba(10,12,15,0.2) 55%, transparent 100%)" }} />
-                <div className="absolute bottom-0 left-0 right-0" style={{ padding: "28px" }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)" }}>
-                    {page.caseStudy.meta}
-                  </span>
-                  <h3 className="m-0 mt-1" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(20px,3vw,30px)", textTransform: "uppercase", color: "#fff" }}>
-                    {page.caseStudy.name}
-                  </h3>
-                  <p className="m-0 mt-2" style={{ fontSize: "14px", color: "rgba(255,255,255,0.75)", maxWidth: "520px" }}>
-                    {page.caseStudy.note}
+            {page.caseStudies.length > 0 ? (
+              page.caseStudies.length === 1 ? (
+                <CaseStudyCard c={page.caseStudies[0]} aspect="21/9" />
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {page.caseStudies.map((c) => (
+                    <CaseStudyCard key={c.name} c={c} aspect="4/3" />
+                  ))}
+                </div>
+              )
+            ) : (
+              <>
+                <div
+                  className="rounded-2xl"
+                  style={{ background: "#F7F8FA", border: "1px solid #DDE1E8", padding: "clamp(28px,4vw,44px)" }}
+                >
+                  <p className="m-0" style={{ fontSize: "16px", lineHeight: "1.75", color: "#3A3F47", maxWidth: "640px" }}>
+                    {renderWithLinks(page.proofNote)}
                   </p>
                 </div>
-              </a>
-            ) : (
-              <div
-                className="rounded-2xl"
-                style={{ background: "#F7F8FA", border: "1px solid #DDE1E8", padding: "clamp(28px,4vw,44px)" }}
-              >
-                <p className="m-0" style={{ fontSize: "16px", lineHeight: "1.75", color: "#3A3F47", maxWidth: "640px" }}>
-                  {renderWithLinks(page.proofNote)}
-                </p>
-              </div>
+                {page.proofGallery && page.proofGallery.length > 0 && (
+                  <div className="mt-6">
+                    <span
+                      className="flex items-center gap-[0.55em] mb-4"
+                      style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#9AA0AD" }}
+                    >
+                      Recent work
+                    </span>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                      {page.proofGallery.map((c) => (
+                        <GalleryCard key={c.name} c={c} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
             )}
           </section>
         </Reveal>
