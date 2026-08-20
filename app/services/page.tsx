@@ -2,6 +2,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { ArrowNE, ArrowRight } from "@/components/ArrowIcon";
+import { industryPages } from "@/lib/industries";
 
 const mono = { fontFamily: "var(--font-mono)" } as React.CSSProperties;
 const display = { fontFamily: "var(--font-display)" } as React.CSSProperties;
@@ -182,6 +183,31 @@ export default function ServicesPage() {
           </div>
 
         </div>
+
+        {/* ── Industries ── */}
+        {industryPages.length > 0 && (
+          <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(48px,6vw,88px) clamp(20px,5vw,64px) 0" }}>
+            <div className="flex items-baseline justify-between border-b mb-8 pb-4" style={{ borderColor: "#DDE1E8" }}>
+              <span className="flex items-center gap-[0.55em]" style={{ ...mono, fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#6B7280" }}>
+                <span className="w-[6px] h-[6px] rounded-full" style={{ background: "#B5642E" }} />
+                Built for your industry
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {industryPages.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/industries/${p.slug}`}
+                  className="flex items-center gap-2 rounded-full no-underline transition-colors hover:bg-[#15171A] hover:text-white hover:border-[#15171A]"
+                  style={{ ...mono, fontSize: "13px", letterSpacing: "0.04em", color: "#15171A", border: "1px solid #DDE1E8", padding: "10px 20px" }}
+                >
+                  {p.industry}
+                  <ArrowRight size={12} />
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ── CTA ── */}
         <section
