@@ -196,54 +196,29 @@ export default async function IndustryPage({
           </div>
         </section>
 
-        {/* Proof — real photos, right up top */}
-        <Reveal>
-          <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(32px,4vw,48px) clamp(20px,5vw,64px) 0" }}>
-            {page.caseStudies.length > 0 ? (
-              page.caseStudies.length === 1 ? (
-                <CaseStudyCard c={page.caseStudies[0]} aspect="21/9" />
-              ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {page.caseStudies.map((c) => (
-                    <CaseStudyCard key={c.name} c={c} aspect="4/3" />
-                  ))}
-                </div>
-              )
-            ) : (
-              <>
-                <div
-                  className="rounded-2xl"
-                  style={{ background: "#F7F8FA", border: "1px solid #DDE1E8", padding: "clamp(28px,4vw,44px)" }}
-                >
-                  <p className="m-0" style={{ fontSize: "16px", lineHeight: "1.75", color: "#3A3F47", maxWidth: "640px" }}>
-                    {renderWithLinks(page.proofNote)}
-                  </p>
-                </div>
-                {page.proofGallery && page.proofGallery.length > 0 && (
-                  <div className="mt-6">
-                    <span
-                      className="flex items-center gap-[0.55em] mb-4"
-                      style={{ fontFamily: "var(--font-mono)", fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#9AA0AD" }}
-                    >
-                      Recent work
-                    </span>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                      {page.proofGallery.map((c) => (
-                        <GalleryCard key={c.name} c={c} />
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </>
-            )}
-          </section>
-        </Reveal>
-
         {/* Billboard statement */}
         <Reveal>
-          <section style={{ padding: "clamp(56px,7vw,96px) clamp(20px,5vw,64px)", margin: "clamp(48px,6vw,88px) 0 0", background: "#15171A" }}>
+          <section
+            className="relative overflow-hidden"
+            style={{ padding: "clamp(72px,10vw,140px) clamp(20px,5vw,64px)" }}
+          >
+            {page.billboardImg ? (
+              <>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={page.billboardImg}
+                  alt=""
+                  aria-hidden
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ filter: "grayscale(0.55) contrast(1.05)" }}
+                />
+                <div className="absolute inset-0" style={{ background: "rgba(10,12,15,0.68)" }} />
+              </>
+            ) : (
+              <div className="absolute inset-0" style={{ background: "#15171A" }} />
+            )}
             <p
-              className="m-0 mx-auto text-center font-black uppercase"
+              className="relative m-0 mx-auto text-center font-black uppercase"
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "clamp(28px,5vw,60px)",
@@ -341,6 +316,47 @@ export default async function IndustryPage({
                 </div>
               ))}
             </div>
+          </section>
+        </Reveal>
+
+        {/* Our work */}
+        <Reveal>
+          <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(56px,7vw,100px) clamp(20px,5vw,64px) 0" }}>
+            <div className="flex items-baseline justify-between border-b mb-8 pb-4" style={{ borderColor: "#DDE1E8" }}>
+              <span className="flex items-center gap-[0.55em]" style={{ fontFamily: "var(--font-mono)", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#6B7280" }}>
+                <span className="w-[6px] h-[6px] rounded-full shrink-0" style={{ background: "#B5642E" }} />
+                {page.caseStudies.length > 0 ? "Our work" : "Recent work"}
+              </span>
+            </div>
+            {page.caseStudies.length > 0 ? (
+              page.caseStudies.length === 1 ? (
+                <CaseStudyCard c={page.caseStudies[0]} aspect="21/9" />
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {page.caseStudies.map((c) => (
+                    <CaseStudyCard key={c.name} c={c} aspect="4/3" />
+                  ))}
+                </div>
+              )
+            ) : (
+              <>
+                <div
+                  className="rounded-2xl"
+                  style={{ background: "#F7F8FA", border: "1px solid #DDE1E8", padding: "clamp(28px,4vw,44px)" }}
+                >
+                  <p className="m-0" style={{ fontSize: "16px", lineHeight: "1.75", color: "#3A3F47", maxWidth: "640px" }}>
+                    {renderWithLinks(page.proofNote)}
+                  </p>
+                </div>
+                {page.proofGallery && page.proofGallery.length > 0 && (
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
+                    {page.proofGallery.map((c) => (
+                      <GalleryCard key={c.name} c={c} />
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
           </section>
         </Reveal>
 
