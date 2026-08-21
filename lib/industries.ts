@@ -1,11 +1,17 @@
-import type { IndustryIconName } from "@/components/IndustryIcon";
-
 export interface CaseStudy {
   name: string;
   meta: string;
   href: string;
   img: string;
   note: string;
+}
+
+// A real, license-safe photo used for atmosphere — never implies it's a
+// photo of the client's own business. `credit` is only set when the
+// license requires a visible attribution line.
+export interface Photo {
+  src: string;
+  credit?: string;
 }
 
 export interface IndustryPage {
@@ -19,16 +25,17 @@ export interface IndustryPage {
   subtext: string;
   // Page won't be built, linked, or listed until this date.
   publishDate: Date;
-  // Short punchy line for the full-width statement band.
+  // Split image + short line right after the hero.
+  introImg: Photo;
+  introNote: string;
+  // Short punchy line for the full-width photo statement band.
   billboardLine: string;
-  // Optional background photo for the statement band. Real, license-safe,
-  // and atmospheric — never implies it's a photo of the client's business.
-  billboardImg?: string;
-  painPoints: { icon: IndustryIconName; title: string; body: string }[];
-  deliverables: { icon: IndustryIconName; title: string; body: string }[];
-  // Short, true, internal facts — not sourced stats. Visual break between
-  // the two big text grids.
-  quickFacts: { icon: IndustryIconName; label: string }[];
+  billboardImg?: Photo;
+  painPoints: { title: string; body: string }[];
+  // Second full-bleed photo band, between pain points and deliverables.
+  midImg?: Photo;
+  midLine?: string;
+  deliverables: { title: string; body: string }[];
   // Real case studies in this exact industry. Rendered as full proof cards.
   caseStudies: CaseStudy[];
   // Shown only when caseStudies is empty.
@@ -68,42 +75,37 @@ export const industryPages: IndustryPage[] = [
     subtext:
       "Most law firm websites are a digital business card. Ours are built to turn someone's worst day into your next client, with the compliance and intake mechanics most web designers miss.",
     publishDate: new Date("2026-08-20"),
+    introImg: { src: "/law-firm-handshake.jpg", credit: "Photo: perzon seo, CC BY 2.0" },
+    introNote: "A website is often the first handshake a potential client gets. Ours are built to make it a firm one.",
     billboardLine: "Built to get the call.",
-    billboardImg: "/law-firm-columns.jpg",
+    billboardImg: { src: "/law-firm-columns.jpg" },
     painPoints: [
       {
-        icon: "shield",
         title: "Bar advertising rules aren't optional",
         body: "Most state bars restrict superlative claims like \"#1\" and \"best,\" regulate how you can frame case results, and require specific disclaimer language. A generic web designer builds first and finds out about your bar's ad rules when you flag it in revisions, if they catch it at all. We build the compliance in from the first draft.",
       },
       {
-        icon: "layers",
         title: "One generic services page can't rank for anything",
         body: "If personal injury, DUI defense, and family law all live on one services page, Google can't tell which practice area you actually want to rank for. So you rank thin for all of them. Each practice area needs its own page, built to answer what that specific client is searching at 11pm.",
       },
       {
-        icon: "phone",
         title: "Legal searches are urgent and mobile",
         body: "Someone searching for a lawyer is often doing it minutes after an arrest, an accident, or a paperwork deadline. If your number isn't tappable in one move on a phone screen, they've already called the firm listed above you.",
       },
       {
-        icon: "user",
         title: "Trust has to be established before the call",
         body: "Hiring a lawyer is a high-stakes, one-time decision for most people. Bar admission, years practicing, results where your state allows you to state them, and a real photo of the actual attorney they'll talk to all do more to get the phone to ring than another stock photo of a gavel.",
       },
     ],
-    quickFacts: [
-      { icon: "shield", label: "Compliant with your state bar's rules from day one" },
-      { icon: "user", label: "One team on your project, no hand-offs" },
-      { icon: "phone", label: "Built mobile-first, because most legal searches are" },
-    ],
+    midImg: { src: "/law-firm-meeting-room.jpg" },
+    midLine: "Built to earn the trust first.",
     deliverables: [
-      { icon: "layers", title: "A dedicated page per practice area", body: "Individually structured and optimized, not folded into one \"Services\" catch-all." },
-      { icon: "calendar", title: "Consultation request above the fold", body: "One obvious next step: call, text, or book. Visible without scrolling, on every page." },
-      { icon: "user", title: "Attorney bio pages built for trust", body: "Bar admission, education, and results within your state's advertising rules. A real photo, not a placeholder icon." },
-      { icon: "shield", title: "Compliant by default", body: "Disclaimer language and claim framing built to your state bar's advertising rules from the first draft, not caught in review." },
-      { icon: "database", title: "LegalService schema markup", body: "Structured data so Google understands your practice areas, location, and attorneys. It changes how you show up in search and AI results." },
-      { icon: "bolt", title: "Built to load fast on a phone", body: "Because the person searching is often standing in a parking lot, not at a desk." },
+      { title: "A dedicated page per practice area", body: "Individually structured and optimized, not folded into one \"Services\" catch-all." },
+      { title: "Consultation request above the fold", body: "One obvious next step: call, text, or book. Visible without scrolling, on every page." },
+      { title: "Attorney bio pages built for trust", body: "Bar admission, education, and results within your state's advertising rules. A real photo, not a placeholder icon." },
+      { title: "Compliant by default", body: "Disclaimer language and claim framing built to your state bar's advertising rules from the first draft, not caught in review." },
+      { title: "LegalService schema markup", body: "Structured data so Google understands your practice areas, location, and attorneys. It changes how you show up in search and AI results." },
+      { title: "Built to load fast on a phone", body: "Because the person searching is often standing in a parking lot, not at a desk." },
     ],
     caseStudies: [],
     proofNote:
@@ -140,42 +142,37 @@ export const industryPages: IndustryPage[] = [
     subtext:
       "Most restaurant websites are a PDF menu bolted onto a template. Ours are built to get found on \"restaurants near me,\" load fast on a phone, and make ordering or booking a table the easiest thing someone does all day.",
     publishDate: new Date("2026-09-03"),
+    introImg: { src: bennysGrill.img },
+    introNote: "People decide where to eat with their eyes before they ever read a word. Ours are built to make your food the first thing they see.",
     billboardLine: "Built to fill the table.",
-    billboardImg: kosherHibachi.img,
+    billboardImg: { src: kosherHibachi.img },
     painPoints: [
       {
-        icon: "pin",
         title: "Local search decides where people eat",
         body: "Most people don't type your restaurant's name. They type \"sushi near me\" or \"date night spot open now\" and pick from whatever Google shows first. If your Google Business Profile and site aren't built to win that search, you're invisible before someone even sees your menu.",
       },
       {
-        icon: "bolt",
         title: "A slow menu loses the table before they order",
         body: "A PDF menu that takes ten seconds to load on a phone is ten seconds someone spends deciding between you and the restaurant next door. The menu needs to open fast, read easily on a small screen, and never make someone pinch and zoom.",
       },
       {
-        icon: "clock",
         title: "Hours and location have to be right everywhere",
         body: "Nothing kills a first visit faster than showing up to a locked door because Google said you were open. Your hours, address, and phone number need to match across your site, Google, and every directory you're listed on.",
       },
       {
-        icon: "camera",
         title: "Photos sell the food before anyone tastes it",
         body: "People decide where to eat with their eyes first. Blurry phone photos or generic stock food shots read as generic. Real photography of your actual dishes and space does more to fill a table than any line of copy.",
       },
     ],
-    quickFacts: [
-      { icon: "pin", label: "Built to win \"near me\" searches" },
-      { icon: "bolt", label: "Menus that load instantly on any phone" },
-      { icon: "camera", label: "Real photography, never stock food shots" },
-    ],
+    midImg: { src: bennysGrill.img },
+    midLine: "Built to be found before they're hungry.",
     deliverables: [
-      { icon: "bolt", title: "A fast, real menu", body: "No PDF download. A menu that opens instantly and reads clean on any phone." },
-      { icon: "pin", title: "Local SEO built in", body: "Restaurant schema markup and a site structured to win \"near me\" searches, not just your name." },
-      { icon: "cart", title: "One-tap ordering and reservations", body: "Connected to whatever ordering or reservation platform you already use, or set up from scratch." },
-      { icon: "clock", title: "Hours and location up front", body: "Visible without scrolling, synced with your Google listing, with a map baked in." },
-      { icon: "camera", title: "Real photography, not stock", body: "Your actual dishes and space, shot and placed to make someone hungry in the first three seconds." },
-      { icon: "pencil", title: "Built for you to update", body: "Change hours, specials, or the menu yourself without calling a developer every time." },
+      { title: "A fast, real menu", body: "No PDF download. A menu that opens instantly and reads clean on any phone." },
+      { title: "Local SEO built in", body: "Restaurant schema markup and a site structured to win \"near me\" searches, not just your name." },
+      { title: "One-tap ordering and reservations", body: "Connected to whatever ordering or reservation platform you already use, or set up from scratch." },
+      { title: "Hours and location up front", body: "Visible without scrolling, synced with your Google listing, with a map baked in." },
+      { title: "Real photography, not stock", body: "Your actual dishes and space, shot and placed to make someone hungry in the first three seconds." },
+      { title: "Built for you to update", body: "Change hours, specials, or the menu yourself without calling a developer every time." },
     ],
     caseStudies: [kosherHibachi, bennysGrill],
     proofNote: "",

@@ -5,8 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import { ArrowNE } from "@/components/ArrowIcon";
-import { IndustryIcon } from "@/components/IndustryIcon";
-import { industryPages, getIndustryPage, type CaseStudy } from "@/lib/industries";
+import { industryPages, getIndustryPage, type CaseStudy, type Photo } from "@/lib/industries";
 
 function isLive(p: { publishDate: Date }) {
   return p.publishDate <= new Date();
@@ -100,6 +99,43 @@ function GalleryCard({ c }: { c: CaseStudy }) {
         </h3>
       </div>
     </a>
+  );
+}
+
+function PhotoBand({ img, line }: { img: Photo; line: string }) {
+  return (
+    <section className="relative overflow-hidden" style={{ padding: "clamp(72px,10vw,140px) clamp(20px,5vw,64px)" }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={img.src}
+        alt=""
+        aria-hidden
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ filter: "grayscale(0.55) contrast(1.05)" }}
+      />
+      <div className="absolute inset-0" style={{ background: "rgba(10,12,15,0.68)" }} />
+      <p
+        className="relative m-0 mx-auto text-center font-black uppercase"
+        style={{
+          fontFamily: "var(--font-display)",
+          fontSize: "clamp(28px,5vw,60px)",
+          lineHeight: "1.05",
+          letterSpacing: "-0.02em",
+          color: "#fff",
+          maxWidth: "900px",
+        }}
+      >
+        {line}
+      </p>
+      {img.credit && (
+        <span
+          className="absolute"
+          style={{ bottom: "10px", right: "16px", fontFamily: "var(--font-mono)", fontSize: "10px", color: "rgba(255,255,255,0.45)" }}
+        >
+          {img.credit}
+        </span>
+      )}
+    </section>
   );
 }
 
@@ -197,41 +233,51 @@ export default async function IndustryPage({
           </div>
         </section>
 
-        {/* Billboard statement */}
+        {/* Intro — real photo + short note */}
         <Reveal>
-          <section
-            className="relative overflow-hidden"
-            style={{ padding: "clamp(72px,10vw,140px) clamp(20px,5vw,64px)" }}
-          >
-            {page.billboardImg ? (
-              <>
+          <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(40px,5vw,64px) clamp(20px,5vw,64px) 0" }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div className="relative overflow-hidden rounded-2xl order-2 lg:order-1" style={{ aspectRatio: "5/4" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={page.billboardImg}
+                  src={page.introImg.src}
                   alt=""
-                  aria-hidden
                   className="absolute inset-0 w-full h-full object-cover"
-                  style={{ filter: "grayscale(0.55) contrast(1.05)" }}
+                  style={{ filter: "grayscale(0.15) contrast(1.05)" }}
                 />
-                <div className="absolute inset-0" style={{ background: "rgba(10,12,15,0.68)" }} />
-              </>
-            ) : (
-              <div className="absolute inset-0" style={{ background: "#15171A" }} />
-            )}
-            <p
-              className="relative m-0 mx-auto text-center font-black uppercase"
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(28px,5vw,60px)",
-                lineHeight: "1.05",
-                letterSpacing: "-0.02em",
-                color: "#fff",
-                maxWidth: "900px",
-              }}
-            >
-              {page.billboardLine}
-            </p>
+                {page.introImg.credit && (
+                  <span
+                    className="absolute"
+                    style={{ bottom: "8px", right: "12px", fontFamily: "var(--font-mono)", fontSize: "9.5px", color: "rgba(255,255,255,0.7)", textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}
+                  >
+                    {page.introImg.credit}
+                  </span>
+                )}
+              </div>
+              <p
+                className="m-0 order-1 lg:order-2"
+                style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(22px,2.6vw,32px)", lineHeight: "1.3", letterSpacing: "-0.01em", color: "#15171A" }}
+              >
+                {page.introNote}
+              </p>
+            </div>
           </section>
+        </Reveal>
+
+        {/* Billboard statement */}
+        <Reveal>
+          {page.billboardImg ? (
+            <PhotoBand img={page.billboardImg} line={page.billboardLine} />
+          ) : (
+            <section style={{ padding: "clamp(72px,10vw,140px) clamp(20px,5vw,64px)", background: "#15171A" }}>
+              <p
+                className="m-0 mx-auto text-center font-black uppercase"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px,5vw,60px)", lineHeight: "1.05", letterSpacing: "-0.02em", color: "#fff", maxWidth: "900px" }}
+              >
+                {page.billboardLine}
+              </p>
+            </section>
+          )}
         </Reveal>
 
         {/* Pain points */}
@@ -246,12 +292,10 @@ export default async function IndustryPage({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {page.painPoints.map((p) => (
                 <div key={p.title}>
-                  <div
-                    className="flex items-center justify-center mb-4 rounded-full"
-                    style={{ width: "40px", height: "40px", background: "#F7F0EA", color: "#B5642E" }}
-                  >
-                    <IndustryIcon name={p.icon} size={19} />
-                  </div>
+                  <span
+                    className="block mb-3"
+                    style={{ width: "9px", height: "9px", background: "#B5642E", borderRadius: "2px", transform: "rotate(45deg)" }}
+                  />
                   <h3
                     className="m-0 mb-2"
                     style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "19px", letterSpacing: "-0.01em", color: "#15171A" }}
@@ -267,30 +311,12 @@ export default async function IndustryPage({
           </section>
         </Reveal>
 
-        {/* Quick facts — visual break between the two text grids */}
-        <Reveal>
-          <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(48px,6vw,80px) clamp(20px,5vw,64px) 0" }}>
-            <div
-              className="grid grid-cols-1 sm:grid-cols-3 rounded-2xl overflow-hidden"
-              style={{ border: "1px solid #DDE1E8" }}
-            >
-              {page.quickFacts.map((f, i) => (
-                <div
-                  key={f.label}
-                  className={`flex items-center gap-3 border-[#DDE1E8] ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
-                  style={{ padding: "24px 28px" }}
-                >
-                  <span style={{ color: "#B5642E" }}>
-                    <IndustryIcon name={f.icon} size={22} />
-                  </span>
-                  <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "14.5px", color: "#15171A", lineHeight: "1.3" }}>
-                    {f.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </section>
-        </Reveal>
+        {/* Second photo band — visual break between the two text grids */}
+        {page.midImg && page.midLine && (
+          <Reveal>
+            <PhotoBand img={page.midImg} line={page.midLine} />
+          </Reveal>
+        )}
 
         {/* Deliverables */}
         <Reveal>
@@ -304,12 +330,10 @@ export default async function IndustryPage({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-9">
               {page.deliverables.map((d) => (
                 <div key={d.title}>
-                  <div
-                    className="flex items-center justify-center mb-4 rounded-full"
-                    style={{ width: "40px", height: "40px", background: "#F7F0EA", color: "#B5642E" }}
-                  >
-                    <IndustryIcon name={d.icon} size={19} />
-                  </div>
+                  <span
+                    className="block mb-3"
+                    style={{ width: "9px", height: "9px", background: "#B5642E", borderRadius: "2px", transform: "rotate(45deg)" }}
+                  />
                   <h3
                     className="m-0 mb-2"
                     style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "16px", letterSpacing: "-0.01em", color: "#15171A" }}
