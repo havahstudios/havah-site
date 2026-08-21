@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import { ArrowNE } from "@/components/ArrowIcon";
+import { IndustryIcon } from "@/components/IndustryIcon";
 import { industryPages, getIndustryPage, type CaseStudy } from "@/lib/industries";
 
 function isLive(p: { publishDate: Date }) {
@@ -245,10 +246,12 @@ export default async function IndustryPage({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {page.painPoints.map((p) => (
                 <div key={p.title}>
-                  <span
-                    className="block mb-3"
-                    style={{ width: "9px", height: "9px", background: "#B5642E", borderRadius: "2px", transform: "rotate(45deg)" }}
-                  />
+                  <div
+                    className="flex items-center justify-center mb-4 rounded-full"
+                    style={{ width: "40px", height: "40px", background: "#F7F0EA", color: "#B5642E" }}
+                  >
+                    <IndustryIcon name={p.icon} size={19} />
+                  </div>
                   <h3
                     className="m-0 mb-2"
                     style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "19px", letterSpacing: "-0.01em", color: "#15171A" }}
@@ -258,6 +261,31 @@ export default async function IndustryPage({
                   <p className="m-0" style={{ fontSize: "15px", lineHeight: "1.7", color: "#5A6070" }}>
                     {p.body}
                   </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </Reveal>
+
+        {/* Quick facts — visual break between the two text grids */}
+        <Reveal>
+          <section className="max-w-[1180px] mx-auto" style={{ padding: "clamp(48px,6vw,80px) clamp(20px,5vw,64px) 0" }}>
+            <div
+              className="grid grid-cols-1 sm:grid-cols-3 rounded-2xl overflow-hidden"
+              style={{ border: "1px solid #DDE1E8" }}
+            >
+              {page.quickFacts.map((f, i) => (
+                <div
+                  key={f.label}
+                  className={`flex items-center gap-3 border-[#DDE1E8] ${i > 0 ? "border-t sm:border-t-0 sm:border-l" : ""}`}
+                  style={{ padding: "24px 28px" }}
+                >
+                  <span style={{ color: "#B5642E" }}>
+                    <IndustryIcon name={f.icon} size={22} />
+                  </span>
+                  <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "14.5px", color: "#15171A", lineHeight: "1.3" }}>
+                    {f.label}
+                  </span>
                 </div>
               ))}
             </div>
@@ -276,10 +304,12 @@ export default async function IndustryPage({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-9">
               {page.deliverables.map((d) => (
                 <div key={d.title}>
-                  <span
-                    className="block mb-3"
-                    style={{ width: "9px", height: "9px", background: "#B5642E", borderRadius: "2px", transform: "rotate(45deg)" }}
-                  />
+                  <div
+                    className="flex items-center justify-center mb-4 rounded-full"
+                    style={{ width: "40px", height: "40px", background: "#F7F0EA", color: "#B5642E" }}
+                  >
+                    <IndustryIcon name={d.icon} size={19} />
+                  </div>
                   <h3
                     className="m-0 mb-2"
                     style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "16px", letterSpacing: "-0.01em", color: "#15171A" }}
@@ -304,9 +334,9 @@ export default async function IndustryPage({
                 Questions
               </span>
             </div>
-            <div className="flex flex-col" style={{ maxWidth: "760px" }}>
-              {page.faqs.map((f, i) => (
-                <div key={f.q} style={{ padding: "22px 0", borderBottom: i < page.faqs.length - 1 ? "1px solid #DDE1E8" : "none" }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10">
+              {page.faqs.map((f) => (
+                <div key={f.q} style={{ padding: "20px 0", borderBottom: "1px solid #DDE1E8" }}>
                   <h3 className="m-0 mb-2" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "16px", color: "#15171A" }}>
                     {f.q}
                   </h3>
